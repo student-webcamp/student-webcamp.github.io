@@ -1,38 +1,25 @@
-<footer class="site-footer">
+<footer>
+    <div class="footer">
+        <div class="row grid">
 
-  <div class="wrapper">
 
-    <h2 class="footer-heading">{{ site.title }}</h2>
-
-    <div class="footer-col-wrapper">
-      <div class="footer-col footer-col-1">
-        <ul class="contact-list">
-          <li>{{ site.title }}</li>
-          <li><a href="mailto:{{ site.email }}">{{ site.email }}</a></li>
-        </ul>
-      </div>
-
-      <div class="footer-col footer-col-2">
-        <ul class="social-media-list">
-          {% if site.github_username %}
-          <li>
-            {% include icon-github.html username=site.github_username %}
-          </li>
-          {% endif %}
-
-          {% if site.twitter_username %}
-          <li>
-            {% include icon-twitter.html username=site.twitter_username %}
-          </li>
-          {% endif %}
-        </ul>
-      </div>
-
-      <div class="footer-col footer-col-3">
-        <p>{{ site.description }}</p>
-      </div>
+            <div class="medium-3 small-6 medium-offset-9 small-offset-6 columns footer__social text-right">
+                <p>Мы в соцсетях</p>
+                <ul class="list-inline">
+                    <li><a href="https://www.facebook.com/webcamp.kiev" class="fi-social-facebook size-36"
+                           target="_blank"></a></li>
+                    <li><a href="https://www.linkedin.com/company/webcamp" class="fi-social-linkedin size-36 ml-10"
+                           target="_blank"></a></li>
+                    <li><a href="https://www.youtube.com/user/webcampkiev" class="fi-social-youtube size-36 ml-10"
+                           target="_blank"></a></li>
+                    <li><a href="mailto:{{ site.email }}">{{ site.email }}</a></li>
+                    <li>subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></li>
+                </ul>
+            </div>
+        </div>
     </div>
-
-  </div>
-
+    <div class="copyright text-center">
+        &copy; Copyright 2013 - {{ 'now' | date: "%Y" }} by <a
+            href="/">webcamp</a>.
+    </div>
 </footer>
