@@ -5,7 +5,7 @@ date:   2016-04-27 11:51:19 +0300
 categories: tutorials
 tags: html
 ---
-#Starter Front-end 1 lesson
+# Starter Front-end 1 lesson
 
 Тут идёт текст что такое **HTML** и **CSS** и с чем его едят
 
@@ -23,12 +23,13 @@ tags: html
 </body>
 </html>
 ```
+или на JavaScript
 
 ```javascript
 var ololo = 4;
 console.log('ololo');
 ```
 
-И ещё пример видео:
-<a href="http://www.youtube.com/watch?feature=player_embedded&v=EzUB5GZqjgY" target="_blank"><img src="http://img.youtube.com/vi/YOUTUBE_VIDEO_ID_HERE/0.jpg" 
-alt="IMAGE ALT TEXT HERE" width="240" height="180" border="10" /></a>
+и еще пример видео
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/EzUB5GZqjgY" frameborder="0" allowfullscreen></iframe>
