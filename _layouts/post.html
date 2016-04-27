@@ -12,7 +12,7 @@ layout: default
             </div>
         </div>
     </header>
-    <p class="post-meta">
+    <p class="post-meta row">
         <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
             {{ page.date | date: "%b %-d, %Y"}}
         </time>
@@ -20,8 +20,16 @@ layout: default
             itemprop="name">{{ page.author }}</span></span>{% endif %}-->
     </p>
 
-    <div class="post-content" itemprop="articleBody">
+    <div class="post-content row" itemprop="articleBody">
         {{ content }}
+    </div>
+
+    <div class="row">
+        <ul>
+        {% for related_post in site.related_posts %}
+            <li><a href="{{related_post.url}}">{{related_post.title}}</a></li>
+        {% endfor %}
+        </ul>
     </div>
 
 </article>

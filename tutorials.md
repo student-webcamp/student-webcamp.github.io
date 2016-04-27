@@ -1,7 +1,6 @@
 ---
-layout: page
+layout: tutorials
 title: Уроки
 permalink: /tutorials/
 ---
-
 
