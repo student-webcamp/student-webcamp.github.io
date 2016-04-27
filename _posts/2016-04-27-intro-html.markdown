@@ -11,7 +11,7 @@ tags: html
 
 Чуть ниже идёит пример кода на HTML
 
-```HTML
+```html
 <!DOCTYPE html>
 <html>
 <head>
