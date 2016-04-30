@@ -5,7 +5,7 @@ date:   2016-04-27 11:51:19 +0300
 categories: tutorials
 tags: html
 ---
-# Starter Front-end 1 lesson
+# Starter Front-end 6 lesson
 
 Тут идёт текст что такое **HTML** и **CSS** и с чем его едят
 

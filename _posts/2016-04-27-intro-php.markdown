@@ -1,0 +1,23 @@
+---
+layout: post
+title:  "Основы PHP"
+date:   2016-04-27 11:51:19 +0300
+categories: tutorials
+tags: php
+---
+# Starter PHP 1 lesson
+
+Тут идёт текст что такое **PHP**
+
+Чуть ниже идёит пример кода на PHP
+
+
+```php
+$kuku = 'kuku';
+```
+
+и еще пример видео
+
+<div class="flex-video widescreen">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/EzUB5GZqjgY" frameborder="0" allowfullscreen></iframe>
+</div>
