@@ -31,7 +31,7 @@ layout: default
                 <div class="callout">
                     <h3><a href="{{post.url}}" class="underline">{{ post.title }}</a></h3>
 
-                    <div class="post__excerpt">{{ post.excerpt }}</div>
+                    <div class="post__excerpt">{{ post.content | truncatewords: 15  | markdownify }}</div>
                     <a href="{{post.url}}">Подробнее</a>
                 </div>
             </div>
