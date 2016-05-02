@@ -12,24 +12,42 @@ layout: default
             </div>
         </div>
     </header>
+    <nav aria-label="You are here:" role="navigation">
+        <ul class="breadcrumbs">
+            <li><a href="/">Главная</a></li>
+            <li>
+                <span class="show-for-sr">Current: </span> {{ page.title }}
+            </li>
+        </ul>
+    </nav>
     {% for category in site.categories %}
     <div class="row mb-50">
         {% assign category_name = category.first%}
-        <p>{{ category_name }}</p>
+        <p><span class="highlight highlight--success">{{ category_name }}</span></p>
         {% for post in site.categories[category_name] limit:2 %}
         <div class="large-6 columns closest {% if forloop.last == true %}end{% endif %}">
-            <h3><a href="{{post.url}}">{{ post.title }}</a></h3>
-            <p>{{ post.excerpt }}</p>
-            <a href="{{post.url}}">Подробнее</a>
+            <div class="callout">
+                <h3><a href="{{post.url}}" class="underline">{{ post.title }}</a></h3>
+
+                <div class="post__excerpt">{{ post.excerpt }}</div>
+                <a href="{{post.url}}">Подробнее</a>
+            </div>
         </div>
         {% endfor %}
-        {% for post in site.categories[category_name] offset:2 %}
-        <div class="medium-4 columns closest {% if forloop.last == true %}end{% endif %}">
-            <h4><a href="{{post.url}}">{{ post.title }}</a></h4>
-            <p>{{ post.excerpt }}</p>
-            <a href="{{post.url}}">Подробнее</a>
+        <div class="row">
+            <div class="">
+                <a href="/{{ category_name }}/" class="btn-more position-left">Больше <span
+                        class="text-capitalize">{{ category_name }}</span></a>
+            </div>
         </div>
-        {% endfor %}
+        <hr/>
+        <!--{% for post in site.categories[category_name] offset:2 %}-->
+        <!--<div class="medium-4 columns closest {% if forloop.last == true %}end{% endif %}">-->
+            <!--<h4><a href="{{post.url}}">{{ post.title }}</a></h4>-->
+            <!--<p>{{ post.excerpt }}</p>-->
+            <!--<a href="{{post.url}}">Подробнее</a>-->
+        <!--</div>-->
+        <!--{% endfor %}-->
         <!--list posts in category-->
     </div>
     {% endfor %}<!--list categories-->
