@@ -1,0 +1,20 @@
+{
+  "name": "student_webcamp",
+  "homepage": "https://github.com/student-webcamp/student-webcamp.github.io",
+  "authors": [
+    "zhukovka <helen.zhukova@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^2.2.3"
+  }
+}

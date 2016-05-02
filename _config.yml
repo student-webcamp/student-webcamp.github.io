@@ -20,3 +20,19 @@ github_username: student-webcamp
 # Build settings
 markdown: kramdown
 permalink: /:title
+
+# collections
+collections:
+  tutorials:
+    output: true
+  webcamp:
+    output: true
+
+#variables
+defaults:
+  -
+    scope:
+      path: ""
+      type: "posts" # a collection in your site, in plural form
+    values:
+      level: 1

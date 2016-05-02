@@ -1,11 +1,12 @@
 ---
 layout: post
-title:  "Основы HTML"
+title:  "Основы HTML test"
 date:   2016-04-27 11:51:19 +0300
 categories: tutorials
+level: 1
 tags: html
 ---
-# Starter Front-end 1 lesson
+# Starter Front-end 5 lesson
 
 Тут идёт текст что такое **HTML** и **CSS** и с чем его едят
 
@@ -32,4 +33,6 @@ console.log('ololo');
 
 и еще пример видео
 
+<div class="flex-video widescreen">
 <iframe width="560" height="315" src="https://www.youtube.com/embed/EzUB5GZqjgY" frameborder="0" allowfullscreen></iframe>
+</div>
