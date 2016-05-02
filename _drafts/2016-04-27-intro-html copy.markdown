@@ -1,11 +1,11 @@
 ---
 layout: post
-title:  "Основы HTML"
-date:   2016-04-27 11:51:19 +0300
+title:  "Основы HTTP"
+date:   2016-05-02 11:51:19 +0300
 categories: tutorials
-tags: html
+tags: http
 ---
-# Starter Front-end 4 lesson
+# Основы HTTP
 
 Тут идёт текст что такое **HTML** и **CSS** и с чем его едят
 

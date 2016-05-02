@@ -12,7 +12,7 @@ layout: default
 
                             <h3>{{latest.title}}</h3>
 
-                            <p>{{ latest.excerpt }}</p>
+                            <div class="post__excerpt">{{ latest.content | truncatewords: 25 }}</div>
                             <a href="{{latest.url}}" class="btn-more position-right">Подробнее</a>
                         </div>
                     </div>
