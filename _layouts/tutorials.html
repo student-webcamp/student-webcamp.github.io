@@ -12,7 +12,14 @@ layout: default
             </div>
         </div>
     </header>
-
+    <nav aria-label="You are here:" role="navigation">
+        <ul class="breadcrumbs">
+            <li><a href="/">Главная</a></li>
+            <li>
+                <span class="show-for-sr">Current: </span> {{ page.title }}
+            </li>
+        </ul>
+    </nav>
     {% for tag in site.data.tags %}
     {% if site.tags[tag] %}
 
@@ -48,3 +55,39 @@ layout: default
     </div>
 
 </article>
+<div class="row mb-50">
+    <div class="page__info">
+        <p class="clearfix">
+            <span class="page__info--l icon-graduation-hat icons--warning"></span>
+            <span class="page__info--ml text--success">Курсы WebCamp</span>
+            <a href="http://www.webcamp.com.ua/" class="page__info--last text--warning">Узнать больше</a>
+        </p>
+    </div>
+    <ul class="list-nostyle post-list">
+        <li class="post-list__item border-bottom">
+            <a href="http://www.webcamp.com.ua/courses/js-basic">
+                <p class="p-5">JavaScript базовый</p>
+            </a>
+        </li>
+        <li class="post-list__item border-bottom">
+            <a href="http://www.webcamp.com.ua/courses/frontend-basic">
+                <p class="p-5">Frontend базовый</p>
+            </a>
+        </li>
+        <li class="post-list__item border-bottom">
+            <a href="http://www.webcamp.com.ua/courses/php-basic">
+                <p class="p-5">PHP базовый</p>
+            </a>
+        </li>
+        <li class="post-list__item border-bottom">
+            <a href="http://www.webcamp.com.ua/courses/java-starter">
+                <p class="p-5">Java Starter</p>
+            </a>
+        </li>
+        <li class="post-list__item border-bottom">
+            <a href="http://www.webcamp.com.ua/courses/indi">
+                <p class="p-5">Индивидуальные занятия</p>
+            </a>
+        </li>
+    </ul>
+</div>

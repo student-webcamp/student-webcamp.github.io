@@ -25,6 +25,7 @@ layout: default
             {{ content }}
         </div>
         <div class="medium-3 columns">
+            {% if site.related_posts.first %}
             <div class="callout">
                 <div class="page__info">
                     <p class="clearfix">
@@ -49,6 +50,7 @@ layout: default
                     {% endfor %}
                 </table>
             </div>
+            {% endif %}
         </div>
     </div>
 
