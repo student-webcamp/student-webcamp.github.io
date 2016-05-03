@@ -37,7 +37,9 @@ layout: default
                     {% for related_post in site.related_posts %}
                     <tr class="post-list__item border-bottom">
                         <td>
-                            <span class="outline--sm outline--success">{{related_post.tags}}</span>
+                            {% if related_post.tags.first %}
+                            <span class="outline--sm outline--success">{{related_post.tags.first}}</span>
+                            {% endif %}
                         </td>
                         <td>
                             <a href="{{related_post.url}}">
