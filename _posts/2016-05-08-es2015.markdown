@@ -1,0 +1,195 @@
+---
+layout: post
+title:  "JavaScript: ES2015"
+date:   2016-05-08 12:47:19 +0300
+categories: tutorials
+tags: javascript
+permalink: es2015
+level: 4
+---
+
+# Новая жизнь с новым JavaScript: ES2015.
+
+Выход нового JavaScript **ES2015** у всех на устах и пока мы все ждем когда браузеры включат поддержку для **ES2015**, уже сегодня можно использовать **ES2015**, например, в **NodeJs** или в браузерах, с помощью **BabelJs**.
+
+Как **ES2015** облегчит жизнь front end разработчикам, смотрите в кратком сравнительном обзоре возможностей **ES2015***.
+
+### <span class="icon-homecode"></span> let it be private
+
+Если вы программируете на JavaScript чуть больше недели, вы уже знакомы с особенностями глобальных переменных, если вы программируете на JavaScript чуть больше месяца, вы знаете, что область видимости переменных можно изменить только с помощью функции и замыкания. 
+
+<span class="highlight highlight--default">ES v5</span>
+
+Вам должен быть знаком такой код, который будет работать не так как вы могли ожидать: alert всегда будет сообщать последний индекс из списка.
+
+```javascript
+/*  -- ES5 -- */
+var listItems = document.getElementsByTagName('li');
+for (var i = 0; i < listItems.length; i++) {
+    listItems[i].addEventListener('click', function () {
+        alert('li number ' + i);
+    });
+}
+```
+
+Попробовать работу кода можно в [JsFiddle](https://jsfiddle.net/jxta9c6w/).
+
+<span class="highlight highlight--success">ES 2015</span>
+
+В **ES2015** появилась возможность использовать приватные переменные ``let``, область видимости которых опрелятся блоком кода (**block scope**).
+
+```javascript
+/*  -- ES 2015 -- */
+let listItems = document.getElementsByTagName('li');
+for (let i = 0; i < listItems.length; i++) {
+    listItems[i].addEventListener('click', function () {
+        alert('li number ' + i);
+    });
+}
+```
+
+Попробовать работу кода можно в [JsFiddle](https://jsfiddle.net/cryLu48j/).
+
+Справка [let](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Statements/let).
+
+### <span class="icon-homecode"></span> Константы
+
+В ES5 константы вообще отсутствовали, что мы могли с этим сделать? Воспользоваться ``Object.defineProperty(obj, prop, descriptor)``, что выглядит не очень удобно.
+
+<span class="highlight highlight--default">ES v5</span>
+
+```javascript
+/*  -- ES5 -- */
+var config = {};
+Object.defineProperties(config, {
+  "HOST": {
+    __proto__: null, // no inherited properties
+  	value: 'http://127.0.0.1'   // not enumerable
+                   		// not configurable
+                   		// not writable
+                   		// as defaults
+  },
+  "PORT": {
+    value: '8080',
+  }
+  // etc. etc.
+});
+config.HOST = 'http://192.0.0.1';
+config.PORT = '4242';
+alert(config.HOST+':'+config.PORT)
+```
+
+Попробовать работу кода можно в [JsFiddle](https://jsfiddle.net/sec9poLo/1/).
+
+<span class="highlight highlight--success">ES 2015</span>
+
+В **ES2015** появилась возможность использовать константы ``const``, доступную только для чтения.
+
+```javascript
+/*  -- ES 2015 -- */
+const HOST = 'http://127.0.0.1';
+const PORT = '8080';
+
+HOST = 'http://192.0.0.1';
+PORT = '4242';
+/* 
+Uncaught SyntaxError: embedded: Line 10: "PORT" is read-only
+   8 | 
+   9 | HOST = 'http://192.0.0.1';
+> 10 | PORT = '4242';
+     | ^
+  11 | alert(HOST+':'+PORT);
+  12 | 
+  13 |  
+*/
+```
+
+Попробовать работу кода можно в [JsFiddle](https://jsfiddle.net/g3q54ox9/).
+
+Справка [const](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Statements/const).
+
+### <span class="icon-homecode"></span> Ракеты
+
+За что программисты не любят **JavaScript**? За контекст ``this``, точнее, за то, что этот самый контекст теряется и становится глобальным.
+
+<span class="highlight highlight--default">ES v5</span>
+
+```javascript
+window.name = 'Global';
+var object = {
+	name: 'Private',
+	sayHello: function(){
+  	//emulate async code 
+  	window.setTimeout(function(){
+    	alert('Hello! My name is '+this.name)
+    }, 500);
+  }
+};
+
+object.sayHello();
+//alerts 'Hello! My name is Global'
+```
+Попробовать работу кода можно в [JsFiddle](https://jsfiddle.net/qpttLqb2/).
+
+
+<span class="highlight highlight--success">ES 2015</span>
+
+В **ES2015** появилась возможность использовать функции со стрелочками (arrow functions) ``(param1, param2, paramN) => { statements }``, которые не только более компактны в записи, но и не теряют контекст.
+
+```javascript
+/*  -- ES 2015 -- */
+window.name = 'Global';
+var object = {
+	name: 'Private',
+	sayHello: function(){
+  	//emulate async code 
+  	window.setTimeout(()=>{
+    	alert('Hello! My name is '+this.name)
+    }, 500);
+  }
+};
+
+object.sayHello();
+//alerts 'Hello! My name is Private'
+```
+
+Попробовать работу кода можно в [JsFiddle](https://jsfiddle.net/fhwzgj22/).
+
+Справка [Arrow functions](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Functions/Arrow_functions).
+
+### <span class="icon-homecode"></span> Неопределенные аргументы
+
+**JavaScript** очень свободно относится к количеству переданных в функцию аргументов, что с одной стороны хорошо, однако, в отличии от других языков **ES 5** не предосталяет возможности определить значения по умолчанию в сигнатуре функции. 
+
+<span class="highlight highlight--default">ES v5</span>
+
+Программисты решают эту проблему кодом такого рода:
+
+```javascript
+function alertNames(names){
+	names = names || [];
+  alert(names instanceof Array);
+}
+
+alertNames();
+```
+
+Попробовать работу кода можно в [JsFiddle](https://jsfiddle.net/mcc1yfrp/).
+
+<span class="highlight highlight--success">ES 2015</span>
+
+В **ES2015** значения по умолчанию можно определить в сигнатуре функции.
+
+```javascript
+/*  -- ES 2015 -- */
+function alertNames(names=[]){
+  alert(names instanceof Array);
+}
+
+alertNames();
+```
+
+Попробовать работу кода можно в [JsFiddle](https://jsfiddle.net/qyLb61un/).
+
+Справка [Default parameters](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Functions/Default_parameters).
+
