@@ -59,13 +59,23 @@ $color-palettes: (
 @function palette($palette, $shade: 'base') {
   @return map-get(map-get($color-palettes, $palette), $shade);
 }
-p{
+
+p {
   font-weight: 400;
 }
+
 .post {
   &__excerpt {
     h1, h2, h3, h4, h5, h6 {
       font-size: 110%;
+    }
+  }
+}
+
+.post-content {
+  &__text {
+    a {
+      color: map_get($ui-colors, success)
     }
   }
 }
