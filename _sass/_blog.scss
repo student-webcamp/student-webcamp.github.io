@@ -50,7 +50,9 @@ $color-palettes: (
 @function palette($palette, $shade: 'base') {
   @return map-get(map-get($color-palettes, $palette), $shade);
 }
-
+p{
+  font-weight: 400;
+}
 .post {
   &__excerpt {
     h1, h2, h3, h4, h5, h6 {

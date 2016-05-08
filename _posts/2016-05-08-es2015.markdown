@@ -14,7 +14,7 @@ level: 4
 
 Как **ES2015** облегчит жизнь front end разработчикам, смотрите в кратком сравнительном обзоре возможностей **ES2015***.
 
-### <span class="icon-homecode"></span> let it be private
+### <span class="icon-homecode" id="let"></span> let it be private
 
 Если вы программируете на JavaScript чуть больше недели, вы уже знакомы с особенностями глобальных переменных, если вы программируете на JavaScript чуть больше месяца, вы знаете, что область видимости переменных можно изменить только с помощью функции и замыкания. 
 
@@ -32,7 +32,7 @@ for (var i = 0; i < listItems.length; i++) {
 }
 ```
 
-Попробовать работу кода можно в [JsFiddle](https://jsfiddle.net/jxta9c6w/).
+<span class="icon-code text-m"></span> Попробовать работу кода можно в [JsFiddle](https://jsfiddle.net/jxta9c6w/).
 
 <span class="highlight highlight--success">ES 2015</span>
 
@@ -48,11 +48,11 @@ for (let i = 0; i < listItems.length; i++) {
 }
 ```
 
-Попробовать работу кода можно в [JsFiddle](https://jsfiddle.net/cryLu48j/).
+<span class="icon-code text-m"></span> Попробовать работу кода можно в [JsFiddle](https://jsfiddle.net/cryLu48j/).
 
-Справка [let](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Statements/let).
+<span class="icon-bookshelf"></span> Справка [let](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Statements/let).
 
-### <span class="icon-homecode"></span> Константы
+### <span class="icon-homecode" id="const"></span> Константы
 
 В ES5 константы вообще отсутствовали, что мы могли с этим сделать? Воспользоваться ``Object.defineProperty(obj, prop, descriptor)``, что выглядит не очень удобно.
 
@@ -79,7 +79,7 @@ config.PORT = '4242';
 alert(config.HOST+':'+config.PORT)
 ```
 
-Попробовать работу кода можно в [JsFiddle](https://jsfiddle.net/sec9poLo/1/).
+<span class="icon-code text-m"></span> Попробовать работу кода можно в [JsFiddle](https://jsfiddle.net/sec9poLo/1/).
 
 <span class="highlight highlight--success">ES 2015</span>
 
@@ -104,11 +104,11 @@ Uncaught SyntaxError: embedded: Line 10: "PORT" is read-only
 */
 ```
 
-Попробовать работу кода можно в [JsFiddle](https://jsfiddle.net/g3q54ox9/).
+<span class="icon-code text-m"></span> Попробовать работу кода можно в [JsFiddle](https://jsfiddle.net/g3q54ox9/).
 
-Справка [const](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Statements/const).
+<span class="icon-bookshelf"></span> Справка [const](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Statements/const).
 
-### <span class="icon-homecode"></span> Ракеты
+### <span class="icon-homecode" id="arrow_functions"></span> Ракеты
 
 За что программисты не любят **JavaScript**? За контекст ``this``, точнее, за то, что этот самый контекст теряется и становится глобальным.
 
@@ -129,7 +129,7 @@ var object = {
 object.sayHello();
 //alerts 'Hello! My name is Global'
 ```
-Попробовать работу кода можно в [JsFiddle](https://jsfiddle.net/qpttLqb2/).
+<span class="icon-code text-m"></span> Попробовать работу кода можно в [JsFiddle](https://jsfiddle.net/qpttLqb2/).
 
 
 <span class="highlight highlight--success">ES 2015</span>
@@ -153,11 +153,11 @@ object.sayHello();
 //alerts 'Hello! My name is Private'
 ```
 
-Попробовать работу кода можно в [JsFiddle](https://jsfiddle.net/fhwzgj22/).
+<span class="icon-code text-m"></span> Попробовать работу кода можно в [JsFiddle](https://jsfiddle.net/fhwzgj22/).
 
-Справка [Arrow functions](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Functions/Arrow_functions).
+<span class="icon-bookshelf"></span> Справка [Arrow functions](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Functions/Arrow_functions).
 
-### <span class="icon-homecode"></span> Неопределенные аргументы
+### <span class="icon-homecode" id="default_parameters"></span> Неопределенные аргументы
 
 **JavaScript** очень свободно относится к количеству переданных в функцию аргументов, что с одной стороны хорошо, однако, в отличии от других языков **ES 5** не предосталяет возможности определить значения по умолчанию в сигнатуре функции. 
 
@@ -174,7 +174,7 @@ function alertNames(names){
 alertNames();
 ```
 
-Попробовать работу кода можно в [JsFiddle](https://jsfiddle.net/mcc1yfrp/).
+<span class="icon-code text-m"></span> Попробовать работу кода можно в [JsFiddle](https://jsfiddle.net/mcc1yfrp/).
 
 <span class="highlight highlight--success">ES 2015</span>
 
@@ -189,7 +189,129 @@ function alertNames(names=[]){
 alertNames();
 ```
 
-Попробовать работу кода можно в [JsFiddle](https://jsfiddle.net/qyLb61un/).
+<span class="icon-code text-m"></span> Попробовать работу кода можно в [JsFiddle](https://jsfiddle.net/qyLb61un/).
 
-Справка [Default parameters](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Functions/Default_parameters).
+<span class="icon-bookshelf"></span> Справка [Default parameters](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Functions/Default_parameters).
 
+### <span class="icon-homecode" id="rest_parameters"></span> Произвольное количество аргументов
+
+В **JavaScript** каждая функция имеет доступ к специальной переменной ``arguments`` для доступа ко всем переданным параметрам. 
+
+<span class="highlight highlight--default">ES v5</span>
+
+Однако, не только переменная специальная, но и ее особенный тип  - Array-like object, делает ``arguments`` не самым удобным в использовании. Так выглядит классический пример использования ``arguments`` для суммирования произвольного количества аргументов.
+
+```javascript
+function sumArgs(){
+  var sum = 0;
+  for(var i = 0; i<arguments.length; i++){
+   sum += arguments[i];
+  }
+  return sum;
+}
+
+alert('1+2+3='+sumArgs(1,2,3))
+```
+
+<span class="icon-code text-m"></span> Попробовать работу кода можно в [JsFiddle](https://jsfiddle.net/z46j3q0o/).
+
+<span class="highlight highlight--success">ES 2015</span>
+
+В **ES2015** вместо специальной переменной ``arguments`` можно использовать новый префикс ``...``, чтобы получить настоящий массив аргументов.
+
+```javascript
+/*  -- ES 2015 -- */
+function sumArgs(...nums){
+  return nums.reduce((prev, curr)=>{
+  	return prev+curr;
+  });
+}
+
+alert('1+2+3='+sumArgs(1,2,3))
+```
+
+<span class="icon-code text-m"></span> Попробовать работу кода можно в [JsFiddle](https://jsfiddle.net/z34kksh8/).
+
+<span class="icon-bookshelf"></span> Справка [Rest parameters](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Functions/Rest_parameters).
+
+### <span class="icon-homecode" id="destructuring_assignment"></span> Конструктивная деструкция
+
+Такого в **JavaScript** еще не было. 
+
+<span class="highlight highlight--default">ES v5</span>
+
+Если вы хотели разобрать массив на переменные, вы писали такой код:
+
+```javascript
+var values = [1, 2, 3];
+var v1 = values[0];
+var v2 = values[1];
+var v3 = values[2];
+alert('v1 = ' + v1 + '; v2 = ' + v2 + '; v3 = ' + v3)
+
+var v_1 = values[0]; //1
+var values_1 = values.slice(1); //[2,3]
+alert('v_1 = ' + v_1 + '; values_1 = ' + values_1)
+```
+
+<span class="icon-code text-m"></span> Попробовать работу кода можно в [JsFiddle](https://jsfiddle.net/b8yxdddu/1/).
+
+<span class="highlight highlight--success">ES 2015</span>
+
+В **ES2015** есть возможность так называемого деструктивного присваивания.
+
+```javascript
+/*  -- ES 2015 -- */
+let [v1, v2, v3] = [1,2,3];
+alert('v1 = ' + v1 + '; v2 = ' + v2 + '; v3 = ' + v3)
+
+let [v_1, ...values_1] = [1,2,3];
+//v_1 = 1
+//values_1 = [2,3]
+alert('v_1 = ' + v_1 + '; values_1 = ' + values_1)
+```
+
+<span class="icon-code text-m"></span> Попробовать работу кода можно в [JsFiddle](https://jsfiddle.net/tp92csx2/1/).
+
+<span class="icon-bookshelf"></span> Справка [Destructuring assignment](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment).
+
+### <span class="icon-homecode" id="for_of"></span> 
+
+
+
+<span class="highlight highlight--default">ES v5</span>
+
+Так в **JavaScript** выглядит стандартная итерация по массиву. 
+
+```javascript
+var values = [1, 2, 3];
+var v1 = values[0];
+var v2 = values[1];
+var v3 = values[2];
+alert('v1 = ' + v1 + '; v2 = ' + v2 + '; v3 = ' + v3)
+
+var v_1 = values[0]; //1
+var values_1 = values.slice(1); //[2,3]
+alert('v_1 = ' + v_1 + '; values_1 = ' + values_1)
+```
+
+<span class="icon-code text-m"></span> Попробовать работу кода можно в [JsFiddle](https://jsfiddle.net/b8yxdddu/1/).
+
+<span class="highlight highlight--success">ES 2015</span>
+
+В **ES2015** есть возможность так называемого деструктивного присваивания.
+
+```javascript
+/*  -- ES 2015 -- */
+let [v1, v2, v3] = [1,2,3];
+alert('v1 = ' + v1 + '; v2 = ' + v2 + '; v3 = ' + v3)
+
+let [v_1, ...values_1] = [1,2,3];
+//v_1 = 1
+//values_1 = [2,3]
+alert('v_1 = ' + v_1 + '; values_1 = ' + values_1)
+```
+
+<span class="icon-code text-m"></span> Попробовать работу кода можно в [JsFiddle](https://jsfiddle.net/tp92csx2/1/).
+
+<span class="icon-bookshelf"></span> Справка [for...of](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Statements/for...of).
