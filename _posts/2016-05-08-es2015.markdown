@@ -1,0 +1,362 @@
+---
+layout: post
+title:  "JavaScript: ES2015"
+date:   2016-05-08 12:47:19 +0300
+categories: tutorials
+tags: javascript
+permalink: es2015
+related_courses: js_advanced js_angular
+level: 4
+---
+
+# Новая жизнь с новым JavaScript: ES2015.
+
+#### Часть I
+
+Выход нового JavaScript **ES2015** у всех на устах и пока мы все ждем когда браузеры включат поддержку для **ES2015**, уже сегодня можно использовать **ES2015**, например, в **NodeJs** или в браузерах, с помощью **BabelJs**.
+
+Как **ES2015** облегчит жизнь front end разработчикам, смотрите в кратком сравнительном обзоре возможностей **ES2015***.
+
+### <span class="icon-homecode" id="let" data-magellan-target="let"></span> let it be private
+
+###### let
+
+Если вы программируете на JavaScript чуть больше недели, вы уже знакомы с особенностями глобальных переменных, если вы программируете на JavaScript чуть больше месяца, вы знаете, что область видимости переменных можно изменить только с помощью функции и замыкания. 
+
+<span class="highlight highlight--default">ES v5</span>
+
+Вам должен быть знаком такой код, который будет работать не так как вы могли ожидать: alert всегда будет сообщать последний индекс из списка.
+
+```javascript
+/*  -- ES5 -- */
+var listItems = document.getElementsByTagName('li');
+for (var i = 0; i < listItems.length; i++) {
+    listItems[i].addEventListener('click', function () {
+        alert('li number ' + i);
+    });
+}
+```
+
+<span class="icon-code text-m"></span> Попробовать работу кода можно в [JsFiddle](https://jsfiddle.net/jxta9c6w/).
+
+<span class="highlight highlight--success">ES 2015</span>
+
+В **ES2015** появилась возможность использовать приватные переменные ``let``, область видимости которых определяется блоком кода (**block scope**).
+
+```javascript
+/*  -- ES 2015 -- */
+let listItems = document.getElementsByTagName('li');
+for (let i = 0; i < listItems.length; i++) {
+    listItems[i].addEventListener('click', function () {
+        alert('li number ' + i);
+    });
+}
+```
+
+<span class="icon-code text-m"></span> Попробовать работу кода можно в [JsFiddle](https://jsfiddle.net/cryLu48j/).
+
+<span class="icon-bookshelf"></span> Справка [let](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Statements/let).
+
+### <span class="icon-homecode" id="const" data-magellan-target="const"></span> Константы
+
+###### const
+
+В ES5 константы вообще отсутствовали, что мы могли с этим сделать? Воспользоваться ``Object.defineProperty(obj, prop, descriptor)``, что выглядит не очень удобно.
+
+<span class="highlight highlight--default">ES v5</span>
+
+```javascript
+/*  -- ES5 -- */
+var config = {};
+Object.defineProperties(config, {
+  "HOST": {
+    __proto__: null, // no inherited properties
+  	value: 'http://127.0.0.1'   // not enumerable
+                   		// not configurable
+                   		// not writable
+                   		// as defaults
+  },
+  "PORT": {
+    value: '8080',
+  }
+  // etc. etc.
+});
+config.HOST = 'http://192.0.0.1';
+config.PORT = '4242';
+alert(config.HOST+':'+config.PORT)
+```
+
+<span class="icon-code text-m"></span> Попробовать работу кода можно в [JsFiddle](https://jsfiddle.net/sec9poLo/1/).
+
+<span class="highlight highlight--success">ES 2015</span>
+
+В **ES2015** появилась возможность использовать константы ``const``, доступную только для чтения.
+
+```javascript
+/*  -- ES 2015 -- */
+const HOST = 'http://127.0.0.1';
+const PORT = '8080';
+
+HOST = 'http://192.0.0.1';
+PORT = '4242';
+/* 
+Uncaught SyntaxError: embedded: Line 10: "PORT" is read-only
+   8 | 
+   9 | HOST = 'http://192.0.0.1';
+> 10 | PORT = '4242';
+     | ^
+  11 | alert(HOST+':'+PORT);
+  12 | 
+  13 |  
+*/
+```
+
+<span class="icon-code text-m"></span> Попробовать работу кода можно в [JsFiddle](https://jsfiddle.net/g3q54ox9/).
+
+<span class="icon-bookshelf"></span> Справка [const](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Statements/const).
+
+### <span class="icon-homecode" id="arrow_functions" data-magellan-target="arrow_functions"></span> Ракеты
+
+###### Arrow functions
+
+За что программисты не любят **JavaScript**? За контекст ``this``, точнее, за то, что этот самый контекст теряется и становится глобальным.
+
+<span class="highlight highlight--default">ES v5</span>
+
+```javascript
+window.name = 'Global';
+var object = {
+	name: 'Private',
+	sayHello: function(){
+  	//emulate async code 
+  	window.setTimeout(function(){
+    	alert('Hello! My name is '+this.name)
+    }, 500);
+  }
+};
+
+object.sayHello();
+//alerts 'Hello! My name is Global'
+```
+<span class="icon-code text-m"></span> Попробовать работу кода можно в [JsFiddle](https://jsfiddle.net/qpttLqb2/).
+
+
+<span class="highlight highlight--success">ES 2015</span>
+
+В **ES2015** появилась возможность использовать функции со стрелочками (arrow functions) ``(param1, param2, paramN) => { statements }``, которые не только более компактны в записи, но и не теряют контекст.
+
+```javascript
+/*  -- ES 2015 -- */
+window.name = 'Global';
+var object = {
+	name: 'Private',
+	sayHello: function(){
+  	//emulate async code 
+  	window.setTimeout(()=>{
+    	alert('Hello! My name is '+this.name)
+    }, 500);
+  }
+};
+
+object.sayHello();
+//alerts 'Hello! My name is Private'
+```
+
+<span class="icon-code text-m"></span> Попробовать работу кода можно в [JsFiddle](https://jsfiddle.net/fhwzgj22/).
+
+<span class="icon-bookshelf"></span> Справка [Arrow functions](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Functions/Arrow_functions).
+
+### <span class="icon-homecode" id="default_parameters" data-magellan-target="default_parameters"></span> Неопределенные аргументы
+
+###### Default parameters
+**JavaScript** очень свободно относится к количеству переданных в функцию аргументов, что с одной стороны хорошо, однако, в отличии от других языков **ES 5** не предоставляет возможности определить значения по умолчанию в сигнатуре функции. 
+
+<span class="highlight highlight--default">ES v5</span>
+
+Программисты решают эту проблему кодом такого рода:
+
+```javascript
+function alertNames(names){
+	names = names || [];
+  alert(names instanceof Array);
+}
+
+alertNames();
+```
+
+<span class="icon-code text-m"></span> Попробовать работу кода можно в [JsFiddle](https://jsfiddle.net/mcc1yfrp/).
+
+<span class="highlight highlight--success">ES 2015</span>
+
+В **ES2015** значения по умолчанию можно определить в сигнатуре функции.
+
+```javascript
+/*  -- ES 2015 -- */
+function alertNames(names=[]){
+  alert(names instanceof Array);
+}
+
+alertNames();
+```
+
+<span class="icon-code text-m"></span> Попробовать работу кода можно в [JsFiddle](https://jsfiddle.net/qyLb61un/).
+
+<span class="icon-bookshelf"></span> Справка [Default parameters](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Functions/Default_parameters).
+
+### <span class="icon-homecode" id="rest_parameters" data-magellan-target="rest_parameters"></span> Произвольное количество аргументов 
+
+###### Rest parameters
+
+В **JavaScript** каждая функция имеет доступ к специальной переменной ``arguments`` для доступа ко всем переданным параметрам. 
+
+<span class="highlight highlight--default">ES v5</span>
+
+Однако, не только переменная специальная, но и ее особенный тип  - Array-like object, делает ``arguments`` не самым удобным в использовании. Так выглядит классический пример использования ``arguments`` для суммирования произвольного количества аргументов.
+
+```javascript
+function sumArgs(){
+  var sum = 0;
+  for(var i = 0; i<arguments.length; i++){
+   sum += arguments[i];
+  }
+  return sum;
+}
+
+alert('1+2+3='+sumArgs(1,2,3))
+```
+
+<span class="icon-code text-m"></span> Попробовать работу кода можно в [JsFiddle](https://jsfiddle.net/z46j3q0o/).
+
+<span class="highlight highlight--success">ES 2015</span>
+
+В **ES2015** вместо специальной переменной ``arguments`` можно использовать новый префикс ``...``, чтобы получить настоящий массив аргументов.
+
+```javascript
+/*  -- ES 2015 -- */
+function sumArgs(...nums){
+  return nums.reduce((prev, curr)=>{
+  	return prev+curr;
+  });
+}
+
+alert('1+2+3='+sumArgs(1,2,3))
+```
+
+<span class="icon-code text-m"></span> Попробовать работу кода можно в [JsFiddle](https://jsfiddle.net/z34kksh8/).
+
+<span class="icon-bookshelf"></span> Справка [Rest parameters](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Functions/Rest_parameters).
+
+### <span class="icon-homecode" id="destructuring_assignment" data-magellan-target="destructuring_assignment"></span> Конструктивная деструкция
+
+###### Array destructuring
+
+Такого в **JavaScript** еще не было. 
+
+<span class="highlight highlight--default">ES v5</span>
+
+Если вы хотели разобрать массив на переменные, вы писали такой код:
+
+```javascript
+var values = [1, 2, 3];
+var v1 = values[0];
+var v2 = values[1];
+var v3 = values[2];
+alert('v1 = ' + v1 + '; v2 = ' + v2 + '; v3 = ' + v3)
+
+var v_1 = values[0]; //1
+var values_1 = values.slice(1); //[2,3]
+alert('v_1 = ' + v_1 + '; values_1 = ' + values_1)
+```
+
+<span class="icon-code text-m"></span> Попробовать работу кода можно в [JsFiddle](https://jsfiddle.net/b8yxdddu/1/).
+
+<span class="highlight highlight--success">ES 2015</span>
+
+В **ES2015** есть возможность так называемого деструктивного присваивания.
+
+```javascript
+/*  -- ES 2015 -- */
+let [v1, v2, v3] = [1,2,3];
+alert('v1 = ' + v1 + '; v2 = ' + v2 + '; v3 = ' + v3)
+
+let [v_1, ...values_1] = [1,2,3];
+//v_1 = 1
+//values_1 = [2,3]
+alert('v_1 = ' + v_1 + '; values_1 = ' + values_1)
+```
+
+<span class="icon-code text-m"></span> Попробовать работу кода можно в [JsFiddle](https://jsfiddle.net/tp92csx2/1/).
+
+<span class="icon-bookshelf"></span> Справка [Destructuring assignment](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment).
+
+### <span class="icon-homecode" id="spread_operator" data-magellan-target="spread_operator"></span> Выход из рамок (spread operator)
+
+###### Spread operator
+
+Часто при написании кода **JavaScript** возникает желание передать в функцию аргументы одним массивом, особенно, если этот массив - результат работы другой функции. 
+
+<span class="highlight highlight--default">ES v5</span>
+
+В **ES 5** для этого можно использовать метод ``apply``, что не очень оптимально и не удобно, например:
+
+```javascript
+var arr = [1,2,3];
+var arr1 = [4,5,6];
+arr.push.apply(arr, arr1);
+alert(arr)
+//[1,2,3,4,5,6]
+```
+
+<span class="icon-code text-m"></span> Попробовать работу кода можно в [JsFiddle](https://jsfiddle.net/a2ed27h8/).
+
+<span class="highlight highlight--success">ES 2015</span>
+
+В **ES2015** это куда проще с оператором расширения (spread operator), который выглядит как префикс ``...``.
+
+```javascript
+/*  -- ES 2015 -- */
+var arr = [1,2,3];
+var arr1 = [4,5,6];
+arr.push(...arr1);
+alert(arr)
+//[1,2,3,4,5,6]
+```
+
+<span class="icon-code text-m"></span> Попробовать работу кода можно в [JsFiddle](https://jsfiddle.net/tah8sx36/).
+
+<span class="icon-bookshelf"></span> Справка [Spread operator](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Operators/Spread_operator).
+
+### <span class="icon-homecode" id="for_of" data-magellan-target="for_of"></span> Цикл for..of
+
+###### for...of
+
+<span class="highlight highlight--default">ES v5</span>
+
+Так в **JavaScript** выглядит стандартная итерация по массиву. 
+
+```javascript
+var ul = document.querySelector('ul');
+var values = ['one', 'two', 'three'];
+for (var i = 0; i < values.length; i++) {
+  ul.insertAdjacentHTML('beforeend', '<li>' + values[i] + '</li>');
+}
+```
+
+<span class="icon-code text-m"></span> Попробовать работу кода можно в [JsFiddle](https://jsfiddle.net/Lym1kn67/).
+
+<span class="highlight highlight--success">ES 2015</span>
+
+В **ES2015** выполнение такой задачи немного проще, так как для массивов определен служебный метод ``Array.prototype[Symbol.iterator]``, для объектов такой метод не определен, потому использование ``for..of`` для объектов возможно только, если определить итератор самостоятельно, мы посмотрим пример итератора позже.
+
+```javascript
+/*  -- ES 2015 -- */
+let ul = document.querySelector('ul');
+let values = ['one', 'two', 'three'];
+for (let value of values) {
+  ul.insertAdjacentHTML('beforeend', '<li>' + value + '</li>');
+}
+```
+
+<span class="icon-code text-m"></span> Попробовать работу кода можно в [JsFiddle](https://jsfiddle.net/372d1gt5/).
+
+<span class="icon-bookshelf"></span> Справка [for...of](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Statements/for...of).

@@ -20,7 +20,16 @@ $color-secondary: $flamingo;
 $color-accent: $azure;
 $color-shadow: rgba($black, .2);
 // Color Palette Modifiers
+// UI Colors
 
+$ui-colors: (
+        default : $fountain-blue,
+        success : $teal,
+        error : $copper_rust,
+        warning : $flamingo,
+        info : $cream_can,
+        accent: $azure
+);
 $color-palettes: (
         grey: (
                 xx-light : lighten($grey, 45%),
@@ -51,10 +60,22 @@ $color-palettes: (
   @return map-get(map-get($color-palettes, $palette), $shade);
 }
 
+p {
+  font-weight: 400;
+}
+
 .post {
   &__excerpt {
     h1, h2, h3, h4, h5, h6 {
       font-size: 110%;
+    }
+  }
+}
+
+.post-content {
+  &__text {
+    a:not([class]) {
+      color: map_get($ui-colors, success)
     }
   }
 }
@@ -79,6 +100,15 @@ $color-palettes: (
       tr:nth-child(even) {
         background: none;
       }
+    }
+  }
+}
+
+[data-magellan] {
+  a {
+    &:hover, &:focus, &.active {
+      background: palette(grey, 'xx-light');
+      color: map_get($ui-colors, success);
     }
   }
 }
