@@ -5,6 +5,7 @@ date:   2016-05-08 12:47:19 +0300
 categories: tutorials
 tags: javascript
 permalink: es2015
+related_courses: js_advanced js_angular
 level: 4
 ---
 
@@ -359,28 +360,3 @@ for (let value of values) {
 <span class="icon-code text-m"></span> Попробовать работу кода можно в [JsFiddle](https://jsfiddle.net/372d1gt5/).
 
 <span class="icon-bookshelf"></span> Справка [for...of](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Statements/for...of).
-
-
-<div class="row mb-50">
-    <div class="medium-12 columns">
-        <div class="page__info">
-            <p class="clearfix">
-                <span class="page__info--l icon-graduation-hat icons--warning"></span>
-                <span class="page__info--ml text--success">Курсы WebCamp</span>
-                <a href="http://www.webcamp.com.ua/" class="page__info--last text--warning">Узнать больше</a>
-            </p>
-        </div>
-        <ul class="list-nostyle post-list">
-            <li class="post-list__item border-bottom">
-                <a href="http://www.webcamp.com.ua/courses/js_advanced">
-                    <p class="p-5">JavaScript Advanced</p>
-                </a>
-            </li>
-            <li class="post-list__item border-bottom">
-                <a href="http://www.webcamp.com.ua/courses/js_angular">
-                    <p class="p-5">Angular JS</p>
-                </a>
-            </li>
-        </ul>
-    </div>
-</div>

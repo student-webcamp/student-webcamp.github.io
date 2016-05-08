@@ -26,7 +26,7 @@ layout: default
         </div>
         <div class="medium-3 columns" data-sticky-container>
 
-            <nav class="columns sticky" data-sticky data-anchor="post_content" data-sticky-on="medium">
+            <nav class="columns sticky" data-sticky data-anchor="post_content" data-btm-anchor="subscribe:bottom" data-sticky-on="medium">
                 <ul class="vertical menu data-magellan mb-50" data-magellan>
                     <li>Содержание:</li>
                 </ul>
@@ -65,3 +65,61 @@ layout: default
     </div>
 
 </article>
+<div class="panel--success mb-50" id="subscribe">
+    <div class="row">
+        <div class="medium-8 medium-centered columns">
+            <div id="mc_embed_signup" class="p-30">
+
+                <p class="text-right">
+                    <span class="highlight--white text-l">Подпишитесь на обновления Student WebCamp</span>
+                </p>
+                <p class="text-right text-white">чтобы первым узнавать об обновлениях {{page.title}}</p>
+                <form action="//webcamp.us13.list-manage.com/subscribe/post?u=d9e9c415942a772cb0d43a4d8&amp;id=57b2022d15"
+                      method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate"
+                      target="_blank" novalidate>
+                    <div id="mc_embed_signup_scroll">
+                        <input type="hidden" name="STATUS" value="subscribed">
+                        <div class="input-group">
+                            <input type="email" value="" name="EMAIL" class="email input-group-field" id="mce-EMAIL"
+                                   placeholder="email" required>
+                            <div class="input-group-button">
+                                <input type="submit" value="Подписаться" name="subscribe"
+                                       id="mc-embedded-subscribe" class="button bg--warning hover--info">
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="row mb-50">
+    <div class="medium-12 columns">
+        Вы можете узнать больше o <strong>{{page.title}}</strong> на курсах <a
+            href="http://www.webcamp.com.ua/">WebCamp</a>
+        <div class="page__info">
+            <p class="clearfix">
+                <span class="page__info--l icon-graduation-hat icons--warning"></span>
+                <span class="page__info--ml text--success">Курсы WebCamp</span>
+                <a href="http://www.webcamp.com.ua/" class="page__info--last text--warning">Узнать больше</a>
+            </p>
+        </div>
+        <ul class="list-nostyle post-list">
+            {% assign courses = page.related_courses | split: " " %}
+            {% for related_course in courses %}
+            <li class="post-list__item border-bottom">
+                <a href="http://www.webcamp.com.ua/courses/{{related_course}}">
+                    <p class="p-5">{{related_course | replace: "_", " " | capitalize }}</p>
+                </a>
+            </li>
+            {% endfor %}
+            <!--<li class="post-list__item border-bottom">-->
+            <!--<a href="http://www.webcamp.com.ua/courses/js_angular">-->
+            <!--<p class="p-5">Angular JS</p>-->
+            <!--</a>-->
+            <!--</li>-->
+        </ul>
+    </div>
+</div>
