@@ -275,43 +275,35 @@ alert('v_1 = ' + v_1 + '; values_1 = ' + values_1)
 
 <span class="icon-bookshelf"></span> Справка [Destructuring assignment](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment).
 
-### <span class="icon-homecode" id="for_of"></span> 
-
-
+### <span class="icon-homecode" id="for_of"></span> Цикл for..of
 
 <span class="highlight highlight--default">ES v5</span>
 
 Так в **JavaScript** выглядит стандартная итерация по массиву. 
 
 ```javascript
-var values = [1, 2, 3];
-var v1 = values[0];
-var v2 = values[1];
-var v3 = values[2];
-alert('v1 = ' + v1 + '; v2 = ' + v2 + '; v3 = ' + v3)
-
-var v_1 = values[0]; //1
-var values_1 = values.slice(1); //[2,3]
-alert('v_1 = ' + v_1 + '; values_1 = ' + values_1)
+var ul = document.querySelector('ul');
+var values = ['one', 'two', 'three'];
+for (var i = 0; i < values.length; i++) {
+  ul.insertAdjacentHTML('beforeend', '<li>' + values[i] + '</li>');
+}
 ```
 
-<span class="icon-code text-m"></span> Попробовать работу кода можно в [JsFiddle](https://jsfiddle.net/b8yxdddu/1/).
+<span class="icon-code text-m"></span> Попробовать работу кода можно в [JsFiddle](https://jsfiddle.net/Lym1kn67/).
 
 <span class="highlight highlight--success">ES 2015</span>
 
-В **ES2015** есть возможность так называемого деструктивного присваивания.
+В **ES2015** выполнение такой задачи немного проще, так как для массивов определен служебный метод ``Array.prototype[Symbol.iterator]``, для объектов такой метод не определен, потому использование ``for..of`` для объктов возможно только, если опрелить итератор самостоятельно, мы посмотрим пример итератора позже.
 
 ```javascript
 /*  -- ES 2015 -- */
-let [v1, v2, v3] = [1,2,3];
-alert('v1 = ' + v1 + '; v2 = ' + v2 + '; v3 = ' + v3)
-
-let [v_1, ...values_1] = [1,2,3];
-//v_1 = 1
-//values_1 = [2,3]
-alert('v_1 = ' + v_1 + '; values_1 = ' + values_1)
+let ul = document.querySelector('ul');
+let values = ['one', 'two', 'three'];
+for (let value of values) {
+  ul.insertAdjacentHTML('beforeend', '<li>' + value + '</li>');
+}
 ```
 
-<span class="icon-code text-m"></span> Попробовать работу кода можно в [JsFiddle](https://jsfiddle.net/tp92csx2/1/).
+<span class="icon-code text-m"></span> Попробовать работу кода можно в [JsFiddle](https://jsfiddle.net/372d1gt5/).
 
 <span class="icon-bookshelf"></span> Справка [for...of](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Statements/for...of).
