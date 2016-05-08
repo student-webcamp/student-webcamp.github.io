@@ -42,12 +42,14 @@ layout: default
                     </div>
                     <table class="post-related__table">
                         {% for related_post in site.related_posts %}
-                        <tr class="post-list__item border-bottom">
+                        <tr>
                             <td>
                                 {% if related_post.tags.first %}
                                 <span class="outline--sm outline--success">{{related_post.tags.first}}</span>
                                 {% endif %}
                             </td>
+                        </tr>
+                        <tr class="post-list__item border-bottom">
                             <td>
                                 <a href="{{related_post.url}}">
                                     <p class="p-5">
@@ -115,11 +117,6 @@ layout: default
                 </a>
             </li>
             {% endfor %}
-            <!--<li class="post-list__item border-bottom">-->
-            <!--<a href="http://www.webcamp.com.ua/courses/js_angular">-->
-            <!--<p class="p-5">Angular JS</p>-->
-            <!--</a>-->
-            <!--</li>-->
         </ul>
     </div>
 </div>
