@@ -20,9 +20,29 @@ $(document).ready(function () {
 
         });
     });
-    _simpleSearch.on("keyup", "input", function(e){
-        if(e.which == "13"){
+    _simpleSearch.on("keyup", "input", function (e) {
+        if (e.which == "13") {
             _simpleSearch.find(".button").click();
         }
-    })
+    });
+
+    var $subscribeForm = $("#mc-embedded-subscribe-form");
+    // $subscribeForm.on('submit', function (e) {
+    //     e.preventDefault();
+    //     var self = $(this);
+    //     $.ajax({
+    //         url: '//webcamp.us13.list-manage.com/subscribe/post?u=d9e9c415942a772cb0d43a4d8&id=57b2022d15',
+    //         data: self.serialize(),
+    //     }).done(function (data) {
+    //         console.log("Sample of data:", data);
+    //     });
+    //     //4895f42d8e5a34fec12c7e136d322f92-us13
+    // });
+    // $.ajax({
+    //         url: "https://us13.api.mailchimp.com/3.0/lists",
+    //         beforeSend: function (xhr) {
+    //             xhr.setRequestHeader ("Authorization", "Basic " + btoa("apikey:4895f42d8e5a34fec12c7e136d322f92-us13"));
+    //         },
+    //     })
+    //
 });
