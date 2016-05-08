@@ -10,11 +10,15 @@ level: 4
 
 # Новая жизнь с новым JavaScript: ES2015.
 
+#### Часть I
+
 Выход нового JavaScript **ES2015** у всех на устах и пока мы все ждем когда браузеры включат поддержку для **ES2015**, уже сегодня можно использовать **ES2015**, например, в **NodeJs** или в браузерах, с помощью **BabelJs**.
 
 Как **ES2015** облегчит жизнь front end разработчикам, смотрите в кратком сравнительном обзоре возможностей **ES2015***.
 
-### <span class="icon-homecode" id="let"></span> let it be private
+### <span class="icon-homecode" id="let" data-magellan-target="let"></span> let it be private
+
+###### let
 
 Если вы программируете на JavaScript чуть больше недели, вы уже знакомы с особенностями глобальных переменных, если вы программируете на JavaScript чуть больше месяца, вы знаете, что область видимости переменных можно изменить только с помощью функции и замыкания. 
 
@@ -36,7 +40,7 @@ for (var i = 0; i < listItems.length; i++) {
 
 <span class="highlight highlight--success">ES 2015</span>
 
-В **ES2015** появилась возможность использовать приватные переменные ``let``, область видимости которых опрелятся блоком кода (**block scope**).
+В **ES2015** появилась возможность использовать приватные переменные ``let``, область видимости которых определяется блоком кода (**block scope**).
 
 ```javascript
 /*  -- ES 2015 -- */
@@ -52,7 +56,9 @@ for (let i = 0; i < listItems.length; i++) {
 
 <span class="icon-bookshelf"></span> Справка [let](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Statements/let).
 
-### <span class="icon-homecode" id="const"></span> Константы
+### <span class="icon-homecode" id="const" data-magellan-target="const"></span> Константы
+
+###### const
 
 В ES5 константы вообще отсутствовали, что мы могли с этим сделать? Воспользоваться ``Object.defineProperty(obj, prop, descriptor)``, что выглядит не очень удобно.
 
@@ -108,7 +114,9 @@ Uncaught SyntaxError: embedded: Line 10: "PORT" is read-only
 
 <span class="icon-bookshelf"></span> Справка [const](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Statements/const).
 
-### <span class="icon-homecode" id="arrow_functions"></span> Ракеты
+### <span class="icon-homecode" id="arrow_functions" data-magellan-target="arrow_functions"></span> Ракеты
+
+###### Arrow functions
 
 За что программисты не любят **JavaScript**? За контекст ``this``, точнее, за то, что этот самый контекст теряется и становится глобальным.
 
@@ -157,9 +165,10 @@ object.sayHello();
 
 <span class="icon-bookshelf"></span> Справка [Arrow functions](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Functions/Arrow_functions).
 
-### <span class="icon-homecode" id="default_parameters"></span> Неопределенные аргументы
+### <span class="icon-homecode" id="default_parameters" data-magellan-target="default_parameters"></span> Неопределенные аргументы
 
-**JavaScript** очень свободно относится к количеству переданных в функцию аргументов, что с одной стороны хорошо, однако, в отличии от других языков **ES 5** не предосталяет возможности определить значения по умолчанию в сигнатуре функции. 
+###### Default parameters
+**JavaScript** очень свободно относится к количеству переданных в функцию аргументов, что с одной стороны хорошо, однако, в отличии от других языков **ES 5** не предоставляет возможности определить значения по умолчанию в сигнатуре функции. 
 
 <span class="highlight highlight--default">ES v5</span>
 
@@ -193,7 +202,9 @@ alertNames();
 
 <span class="icon-bookshelf"></span> Справка [Default parameters](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Functions/Default_parameters).
 
-### <span class="icon-homecode" id="rest_parameters"></span> Произвольное количество аргументов
+### <span class="icon-homecode" id="rest_parameters" data-magellan-target="rest_parameters"></span> Произвольное количество аргументов 
+
+###### Rest parameters
 
 В **JavaScript** каждая функция имеет доступ к специальной переменной ``arguments`` для доступа ко всем переданным параметрам. 
 
@@ -234,7 +245,9 @@ alert('1+2+3='+sumArgs(1,2,3))
 
 <span class="icon-bookshelf"></span> Справка [Rest parameters](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Functions/Rest_parameters).
 
-### <span class="icon-homecode" id="destructuring_assignment"></span> Конструктивная деструкция
+### <span class="icon-homecode" id="destructuring_assignment" data-magellan-target="destructuring_assignment"></span> Конструктивная деструкция
+
+###### Array destructuring
 
 Такого в **JavaScript** еще не было. 
 
@@ -275,7 +288,46 @@ alert('v_1 = ' + v_1 + '; values_1 = ' + values_1)
 
 <span class="icon-bookshelf"></span> Справка [Destructuring assignment](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment).
 
-### <span class="icon-homecode" id="for_of"></span> Цикл for..of
+### <span class="icon-homecode" id="spread_operator" data-magellan-target="spread_operator"></span> Выход из рамок (spread operator)
+
+###### Spread operator
+
+Часто при написании кода **JavaScript** возникает желание передать в функцию аргументы одним массивом, особенно, если этот массив - результат работы другой функции. 
+
+<span class="highlight highlight--default">ES v5</span>
+
+В **ES 5** для этого можно использовать метод ``apply``, что не очень оптимально и не удобно, например:
+
+```javascript
+var arr = [1,2,3];
+var arr1 = [4,5,6];
+arr.push.apply(arr, arr1);
+alert(arr)
+//[1,2,3,4,5,6]
+```
+
+<span class="icon-code text-m"></span> Попробовать работу кода можно в [JsFiddle](https://jsfiddle.net/a2ed27h8/).
+
+<span class="highlight highlight--success">ES 2015</span>
+
+В **ES2015** это куда проще с оператором расширения (spread operator), который выглядит как префикс ``...``.
+
+```javascript
+/*  -- ES 2015 -- */
+var arr = [1,2,3];
+var arr1 = [4,5,6];
+arr.push(...arr1);
+alert(arr)
+//[1,2,3,4,5,6]
+```
+
+<span class="icon-code text-m"></span> Попробовать работу кода можно в [JsFiddle](https://jsfiddle.net/tah8sx36/).
+
+<span class="icon-bookshelf"></span> Справка [Spread operator](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Operators/Spread_operator).
+
+### <span class="icon-homecode" id="for_of" data-magellan-target="for_of"></span> Цикл for..of
+
+###### for...of
 
 <span class="highlight highlight--default">ES v5</span>
 
@@ -293,7 +345,7 @@ for (var i = 0; i < values.length; i++) {
 
 <span class="highlight highlight--success">ES 2015</span>
 
-В **ES2015** выполнение такой задачи немного проще, так как для массивов определен служебный метод ``Array.prototype[Symbol.iterator]``, для объектов такой метод не определен, потому использование ``for..of`` для объктов возможно только, если опрелить итератор самостоятельно, мы посмотрим пример итератора позже.
+В **ES2015** выполнение такой задачи немного проще, так как для массивов определен служебный метод ``Array.prototype[Symbol.iterator]``, для объектов такой метод не определен, потому использование ``for..of`` для объектов возможно только, если определить итератор самостоятельно, мы посмотрим пример итератора позже.
 
 ```javascript
 /*  -- ES 2015 -- */
@@ -307,3 +359,28 @@ for (let value of values) {
 <span class="icon-code text-m"></span> Попробовать работу кода можно в [JsFiddle](https://jsfiddle.net/372d1gt5/).
 
 <span class="icon-bookshelf"></span> Справка [for...of](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Statements/for...of).
+
+
+<div class="row mb-50">
+    <div class="medium-12 columns">
+        <div class="page__info">
+            <p class="clearfix">
+                <span class="page__info--l icon-graduation-hat icons--warning"></span>
+                <span class="page__info--ml text--success">Курсы WebCamp</span>
+                <a href="http://www.webcamp.com.ua/" class="page__info--last text--warning">Узнать больше</a>
+            </p>
+        </div>
+        <ul class="list-nostyle post-list">
+            <li class="post-list__item border-bottom">
+                <a href="http://www.webcamp.com.ua/courses/js_advanced">
+                    <p class="p-5">JavaScript Advanced</p>
+                </a>
+            </li>
+            <li class="post-list__item border-bottom">
+                <a href="http://www.webcamp.com.ua/courses/js_angular">
+                    <p class="p-5">Angular JS</p>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>

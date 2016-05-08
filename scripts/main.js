@@ -1,5 +1,16 @@
 $(document).ready(function () {
     // Handler for .ready() called.
+    var $magelanMenu = $('.data-magellan[data-magellan]');
+    var $navToggler = $('[data-nav-toggler]');
+    $navToggler.on('click', function () {
+        var selector = $(this).attr('data-nav-toggler');
+        $(selector).toggleClass('active');
+    });
+    $('[data-magellan-target]').each(function () {
+        var text = $(this).parent().text();
+        $magelanMenu.append('<li><a href="#' + this.id + '">' + text.trim() + '</a></li>');
+    });
+    $(document).foundation();
     var _simpleSearch = $(".simple-search");
     _simpleSearch.on("click", ".button", function (e) {
         var self = $(this);

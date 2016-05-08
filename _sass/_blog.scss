@@ -74,7 +74,7 @@ p {
 
 .post-content {
   &__text {
-    a {
+    a:not([class]) {
       color: map_get($ui-colors, success)
     }
   }
@@ -100,6 +100,15 @@ p {
       tr:nth-child(even) {
         background: none;
       }
+    }
+  }
+}
+
+[data-magellan] {
+  a {
+    &:hover, &:focus, &.active {
+      background: palette(grey, 'xx-light');
+      color: map_get($ui-colors, success);
     }
   }
 }
