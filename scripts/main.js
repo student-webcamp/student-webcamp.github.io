@@ -6,7 +6,7 @@ $(document).ready(function () {
         var selector = $(this).attr('data-nav-toggler');
         $(selector).toggleClass('active');
     });
-    $('[data-magellan-target]').each(function () {
+    $('.icon-homecode').each(function () {
         var text = $(this).parent().text();
         $magelanMenu.append('<li><a href="#' + this.id + '">' + text.trim() + '</a></li>');
     });
@@ -49,11 +49,5 @@ $(document).ready(function () {
     //     });
     //     //4895f42d8e5a34fec12c7e136d322f92-us13
     // });
-    // $.ajax({
-    //         url: "https://us13.api.mailchimp.com/3.0/lists",
-    //         beforeSend: function (xhr) {
-    //             xhr.setRequestHeader ("Authorization", "Basic " + btoa("apikey:4895f42d8e5a34fec12c7e136d322f92-us13"));
-    //         },
-    //     })
-    //
+
 });
