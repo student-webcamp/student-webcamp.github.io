@@ -13,19 +13,19 @@ level: 4
 
 #### Часть I
 
-Выход нового JavaScript **ES2015** у всех на устах и пока мы все ждем когда браузеры включат поддержку для **ES2015**, уже сегодня можно использовать **ES2015**, например, в **NodeJs** или в браузерах, с помощью **BabelJs**.
+Выход нового JavaScript **ES2015** у всех на устах. Но уже сегодня пока мы ждем когда браузеры включат поддержку для **ES2015**, можно использовать эту спецификацию. Например в **NodeJs** или в браузерах с помощью **BabelJs**.
 
-Как **ES2015** облегчит жизнь front end разработчикам, смотрите в кратком сравнительном обзоре возможностей **ES2015***.
+Как **ES2015** облегчит жизнь frontend-разработчикам смотрите в кратком сравнительном обзоре возможностей **ES2015**.
 
 ### <span class="icon-homecode" id="let" data-magellan-target="let"></span> let it be private
 
 ###### let
 
-Если вы программируете на JavaScript чуть больше недели, вы уже знакомы с особенностями глобальных переменных, если вы программируете на JavaScript чуть больше месяца, вы знаете, что область видимости переменных можно изменить только с помощью функции и замыкания. 
+Если Вы программируете на JavaScript чуть больше недели, то Вы уже знакомы с особенностями глобальных переменных. Если Вы программируете на JavaScript чуть больше месяца, то знаете, что область видимости переменных можно изменить только с помощью функции и замыкания. 
 
 <span class="highlight highlight--default">ES v5</span>
 
-Вам должен быть знаком такой код, который будет работать не так как вы могли ожидать: alert всегда будет сообщать последний индекс из списка.
+Вам должен быть знаком такой код, который будет работать не так как вы могли ожидать: *alert* всегда будет сообщать последний индекс из списка.
 
 ```javascript
 /*  -- ES5 -- */
@@ -53,7 +53,7 @@ for (let i = 0; i < listItems.length; i++) {
 }
 ```
 
-<span class="icon-code text-m"></span> Попробовать работу кода можно в [JsFiddle](https://jsfiddle.net/cryLu48j/).
+- Попробовать работу кода можно в [JsFiddle](https://jsfiddle.net/cryLu48j/).
 
 <span class="icon-bookshelf"></span> Справка [let](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Statements/let).
 
@@ -61,7 +61,7 @@ for (let i = 0; i < listItems.length; i++) {
 
 ###### const
 
-В ES5 константы вообще отсутствовали, что мы могли с этим сделать? Воспользоваться ``Object.defineProperty(obj, prop, descriptor)``, что выглядит не очень удобно.
+Ранее, в стандарте **ES5** константы вообще отсутствовали. Что мы могли с этим сделать? Воспользоваться ``Object.defineProperty(obj, prop, descriptor)`` , что выглядит не очень удобно.
 
 <span class="highlight highlight--default">ES v5</span>
 
@@ -86,17 +86,16 @@ config.PORT = '4242';
 alert(config.HOST+':'+config.PORT)
 ```
 
-<span class="icon-code text-m"></span> Попробовать работу кода можно в [JsFiddle](https://jsfiddle.net/sec9poLo/1/).
+- Попробовать работу кода можно в [JsFiddle](https://jsfiddle.net/sec9poLo/1/).
 
 <span class="highlight highlight--success">ES 2015</span>
 
-В **ES2015** появилась возможность использовать константы ``const``, доступную только для чтения.
+В **ES2015** появилась возможность использовать константы ``const``, доступные только для чтения.
 
 ```javascript
 /*  -- ES 2015 -- */
 const HOST = 'http://127.0.0.1';
 const PORT = '8080';
-
 HOST = 'http://192.0.0.1';
 PORT = '4242';
 /* 
@@ -111,7 +110,7 @@ Uncaught SyntaxError: embedded: Line 10: "PORT" is read-only
 */
 ```
 
-<span class="icon-code text-m"></span> Попробовать работу кода можно в [JsFiddle](https://jsfiddle.net/g3q54ox9/).
+- Попробовать работу кода можно в [JsFiddle](https://jsfiddle.net/g3q54ox9/).
 
 <span class="icon-bookshelf"></span> Справка [const](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Statements/const).
 
@@ -119,7 +118,7 @@ Uncaught SyntaxError: embedded: Line 10: "PORT" is read-only
 
 ###### Arrow functions
 
-За что программисты не любят **JavaScript**? За контекст ``this``, точнее, за то, что этот самый контекст теряется и становится глобальным.
+За что программисты не любят **JavaScript**? За контекст ``this``. Точнее за то, что этот самый контекст теряется и становится глобальным.
 
 <span class="highlight highlight--default">ES v5</span>
 
@@ -134,16 +133,15 @@ var object = {
     }, 500);
   }
 };
-
 object.sayHello();
 //alerts 'Hello! My name is Global'
 ```
-<span class="icon-code text-m"></span> Попробовать работу кода можно в [JsFiddle](https://jsfiddle.net/qpttLqb2/).
+- Попробовать работу кода можно в [JsFiddle](https://jsfiddle.net/qpttLqb2/).
 
 
 <span class="highlight highlight--success">ES 2015</span>
 
-В **ES2015** появилась возможность использовать функции со стрелочками (arrow functions) ``(param1, param2, paramN) => { statements }``, которые не только более компактны в записи, но и не теряют контекст.
+В **ES2015** появилась возможность использовать функции со стрелочками (**arrow functions**) ``(param1, param2, paramN) => { statements }`` , которые не только более компактны в записи, но и не теряют контекст.
 
 ```javascript
 /*  -- ES 2015 -- */
@@ -157,19 +155,19 @@ var object = {
     }, 500);
   }
 };
-
 object.sayHello();
 //alerts 'Hello! My name is Private'
 ```
 
-<span class="icon-code text-m"></span> Попробовать работу кода можно в [JsFiddle](https://jsfiddle.net/fhwzgj22/).
+- Попробовать работу кода можно в [JsFiddle](https://jsfiddle.net/fhwzgj22/).
 
 <span class="icon-bookshelf"></span> Справка [Arrow functions](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Functions/Arrow_functions).
 
 ### <span class="icon-homecode" id="default_parameters" data-magellan-target="default_parameters"></span> Неопределенные аргументы
 
 ###### Default parameters
-**JavaScript** очень свободно относится к количеству переданных в функцию аргументов, что с одной стороны хорошо, однако, в отличии от других языков **ES 5** не предоставляет возможности определить значения по умолчанию в сигнатуре функции. 
+
+**JavaScript** очень свободно относится к количеству переданных в функцию аргументов, что с одной стороны хорошо. Однако, в отличии от других языков, **ES5** не предоставляет возможности определить значения по умолчанию в сигнатуре функции. 
 
 <span class="highlight highlight--default">ES v5</span>
 
@@ -180,11 +178,10 @@ function alertNames(names){
 	names = names || [];
   alert(names instanceof Array);
 }
-
 alertNames();
 ```
 
-<span class="icon-code text-m"></span> Попробовать работу кода можно в [JsFiddle](https://jsfiddle.net/mcc1yfrp/).
+- Попробовать работу кода можно в [JsFiddle](https://jsfiddle.net/mcc1yfrp/).
 
 <span class="highlight highlight--success">ES 2015</span>
 
@@ -195,11 +192,10 @@ alertNames();
 function alertNames(names=[]){
   alert(names instanceof Array);
 }
-
 alertNames();
 ```
 
-<span class="icon-code text-m"></span> Попробовать работу кода можно в [JsFiddle](https://jsfiddle.net/qyLb61un/).
+- Попробовать работу кода можно в [JsFiddle](https://jsfiddle.net/qyLb61un/).
 
 <span class="icon-bookshelf"></span> Справка [Default parameters](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Functions/Default_parameters).
 
@@ -207,11 +203,13 @@ alertNames();
 
 ###### Rest parameters
 
-В **JavaScript** каждая функция имеет доступ к специальной переменной ``arguments`` для доступа ко всем переданным параметрам. 
+Для доступа ко всем переданным параметрам, в **JavaScript** каждая функция имеет доступ к специальной переменной -- ``arguments`` . 
 
 <span class="highlight highlight--default">ES v5</span>
 
-Однако, не только переменная специальная, но и ее особенный тип  - Array-like object, делает ``arguments`` не самым удобным в использовании. Так выглядит классический пример использования ``arguments`` для суммирования произвольного количества аргументов.
+Однако, особенный тип переменной - Array-like object - делает ``arguments`` не самым удобным в использовании. 
+
+Так выглядит классический пример использования ``arguments`` для суммирования произвольного количества аргументов.
 
 ```javascript
 function sumArgs(){
@@ -221,11 +219,10 @@ function sumArgs(){
   }
   return sum;
 }
-
 alert('1+2+3='+sumArgs(1,2,3))
 ```
 
-<span class="icon-code text-m"></span> Попробовать работу кода можно в [JsFiddle](https://jsfiddle.net/z46j3q0o/).
+- Попробовать работу кода можно в [JsFiddle](https://jsfiddle.net/z46j3q0o/).
 
 <span class="highlight highlight--success">ES 2015</span>
 
@@ -238,11 +235,10 @@ function sumArgs(...nums){
   	return prev+curr;
   });
 }
-
 alert('1+2+3='+sumArgs(1,2,3))
 ```
 
-<span class="icon-code text-m"></span> Попробовать работу кода можно в [JsFiddle](https://jsfiddle.net/z34kksh8/).
+- Попробовать работу кода можно в [JsFiddle](https://jsfiddle.net/z34kksh8/).
 
 <span class="icon-bookshelf"></span> Справка [Rest parameters](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Functions/Rest_parameters).
 
@@ -262,13 +258,12 @@ var v1 = values[0];
 var v2 = values[1];
 var v3 = values[2];
 alert('v1 = ' + v1 + '; v2 = ' + v2 + '; v3 = ' + v3)
-
 var v_1 = values[0]; //1
 var values_1 = values.slice(1); //[2,3]
 alert('v_1 = ' + v_1 + '; values_1 = ' + values_1)
 ```
 
-<span class="icon-code text-m"></span> Попробовать работу кода можно в [JsFiddle](https://jsfiddle.net/b8yxdddu/1/).
+- Попробовать работу кода можно в [JsFiddle](https://jsfiddle.net/b8yxdddu/1/).
 
 <span class="highlight highlight--success">ES 2015</span>
 
@@ -278,14 +273,13 @@ alert('v_1 = ' + v_1 + '; values_1 = ' + values_1)
 /*  -- ES 2015 -- */
 let [v1, v2, v3] = [1,2,3];
 alert('v1 = ' + v1 + '; v2 = ' + v2 + '; v3 = ' + v3)
-
 let [v_1, ...values_1] = [1,2,3];
 //v_1 = 1
 //values_1 = [2,3]
 alert('v_1 = ' + v_1 + '; values_1 = ' + values_1)
 ```
 
-<span class="icon-code text-m"></span> Попробовать работу кода можно в [JsFiddle](https://jsfiddle.net/tp92csx2/1/).
+- Попробовать работу кода можно в [JsFiddle](https://jsfiddle.net/tp92csx2/1/).
 
 <span class="icon-bookshelf"></span> Справка [Destructuring assignment](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment).
 
@@ -293,11 +287,11 @@ alert('v_1 = ' + v_1 + '; values_1 = ' + values_1)
 
 ###### Spread operator
 
-Часто при написании кода **JavaScript** возникает желание передать в функцию аргументы одним массивом, особенно, если этот массив - результат работы другой функции. 
+Часто, при написании кода **JavaScript**, возникает желание передать в функцию аргументы одним массивом, особенно, если этот массив - результат работы другой функции. 
 
 <span class="highlight highlight--default">ES v5</span>
 
-В **ES 5** для этого можно использовать метод ``apply``, что не очень оптимально и не удобно, например:
+В **ES5** для этого можно использовать метод ``apply``, что не очень оптимально и не удобно. Например:
 
 ```javascript
 var arr = [1,2,3];
@@ -307,7 +301,7 @@ alert(arr)
 //[1,2,3,4,5,6]
 ```
 
-<span class="icon-code text-m"></span> Попробовать работу кода можно в [JsFiddle](https://jsfiddle.net/a2ed27h8/).
+- Попробовать работу кода можно в [JsFiddle](https://jsfiddle.net/a2ed27h8/).
 
 <span class="highlight highlight--success">ES 2015</span>
 
@@ -322,7 +316,7 @@ alert(arr)
 //[1,2,3,4,5,6]
 ```
 
-<span class="icon-code text-m"></span> Попробовать работу кода можно в [JsFiddle](https://jsfiddle.net/tah8sx36/).
+- Попробовать работу кода можно в [JsFiddle](https://jsfiddle.net/tah8sx36/).
 
 <span class="icon-bookshelf"></span> Справка [Spread operator](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Operators/Spread_operator).
 
@@ -332,7 +326,7 @@ alert(arr)
 
 <span class="highlight highlight--default">ES v5</span>
 
-Так в **JavaScript** выглядит стандартная итерация по массиву. 
+Так в **JavaScript** выглядит стандартная итерация по массиву: 
 
 ```javascript
 var ul = document.querySelector('ul');
@@ -342,11 +336,11 @@ for (var i = 0; i < values.length; i++) {
 }
 ```
 
-<span class="icon-code text-m"></span> Попробовать работу кода можно в [JsFiddle](https://jsfiddle.net/Lym1kn67/).
+- Попробовать работу кода можно в [JsFiddle](https://jsfiddle.net/Lym1kn67/).
 
 <span class="highlight highlight--success">ES 2015</span>
 
-В **ES2015** выполнение такой задачи немного проще, так как для массивов определен служебный метод ``Array.prototype[Symbol.iterator]``, для объектов такой метод не определен, потому использование ``for..of`` для объектов возможно только, если определить итератор самостоятельно, мы посмотрим пример итератора позже.
+В **ES2015** выполнение такой задачи немного проще, так как для массивов определен служебный метод ``Array.prototype[Symbol.iterator]``. Для объектов такой метод не определен, поэтому использование ``for..of`` для объектов возможно только, если определить итератор самостоятельно. Мы рассмотрим пример итератора позже.
 
 ```javascript
 /*  -- ES 2015 -- */
@@ -357,6 +351,6 @@ for (let value of values) {
 }
 ```
 
-<span class="icon-code text-m"></span> Попробовать работу кода можно в [JsFiddle](https://jsfiddle.net/372d1gt5/).
+- Попробовать работу кода можно в [JsFiddle](https://jsfiddle.net/372d1gt5/).
 
 <span class="icon-bookshelf"></span> Справка [for...of](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Statements/for...of).
