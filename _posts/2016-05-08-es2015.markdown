@@ -13,7 +13,7 @@ level: 4
 
 #### Часть I
 
-Выход нового JavaScript **ES2015** у всех на устах. Но уже сегодня пока мы ждем когда браузеры включат поддержку для **ES2015**, можно использовать эту спецификацию. Например в **NodeJs** или в браузерах с помощью **BabelJs**.
+Выход нового JavaScript **ES2015** у всех на устах и пока мы все ждем когда браузеры включат поддержку для **ES2015**, уже сегодня можно использовать **ES2015**, например, в **NodeJs** или в браузерах, с помощью **BabelJs**.
 
 Как **ES2015** облегчит жизнь frontend-разработчикам смотрите в кратком сравнительном обзоре возможностей **ES2015**.
 
@@ -53,7 +53,7 @@ for (let i = 0; i < listItems.length; i++) {
 }
 ```
 
-- Попробовать работу кода можно в [JsFiddle](https://jsfiddle.net/cryLu48j/).
+<span class="icon-code text-m"></span> Попробовать работу кода можно в [JsFiddle](https://jsfiddle.net/cryLu48j/).
 
 <span class="icon-bookshelf"></span> Справка [let](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Statements/let).
 
@@ -86,7 +86,7 @@ config.PORT = '4242';
 alert(config.HOST+':'+config.PORT)
 ```
 
-- Попробовать работу кода можно в [JsFiddle](https://jsfiddle.net/sec9poLo/1/).
+<span class="icon-code text-m"></span> Попробовать работу кода можно в [JsFiddle](https://jsfiddle.net/sec9poLo/1/).
 
 <span class="highlight highlight--success">ES 2015</span>
 
@@ -110,7 +110,7 @@ Uncaught SyntaxError: embedded: Line 10: "PORT" is read-only
 */
 ```
 
-- Попробовать работу кода можно в [JsFiddle](https://jsfiddle.net/g3q54ox9/).
+<span class="icon-code text-m"></span> Попробовать работу кода можно в [JsFiddle](https://jsfiddle.net/g3q54ox9/).
 
 <span class="icon-bookshelf"></span> Справка [const](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Statements/const).
 
@@ -136,7 +136,7 @@ var object = {
 object.sayHello();
 //alerts 'Hello! My name is Global'
 ```
-- Попробовать работу кода можно в [JsFiddle](https://jsfiddle.net/qpttLqb2/).
+<span class="icon-code text-m"></span> Попробовать работу кода можно в [JsFiddle](https://jsfiddle.net/qpttLqb2/).
 
 
 <span class="highlight highlight--success">ES 2015</span>
@@ -159,7 +159,7 @@ object.sayHello();
 //alerts 'Hello! My name is Private'
 ```
 
-- Попробовать работу кода можно в [JsFiddle](https://jsfiddle.net/fhwzgj22/).
+<span class="icon-code text-m"></span> Попробовать работу кода можно в [JsFiddle](https://jsfiddle.net/fhwzgj22/).
 
 <span class="icon-bookshelf"></span> Справка [Arrow functions](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Functions/Arrow_functions).
 
@@ -181,7 +181,7 @@ function alertNames(names){
 alertNames();
 ```
 
-- Попробовать работу кода можно в [JsFiddle](https://jsfiddle.net/mcc1yfrp/).
+<span class="icon-code text-m"></span> Попробовать работу кода можно в [JsFiddle](https://jsfiddle.net/mcc1yfrp/).
 
 <span class="highlight highlight--success">ES 2015</span>
 
@@ -195,7 +195,7 @@ function alertNames(names=[]){
 alertNames();
 ```
 
-- Попробовать работу кода можно в [JsFiddle](https://jsfiddle.net/qyLb61un/).
+<span class="icon-code text-m"></span> Попробовать работу кода можно в [JsFiddle](https://jsfiddle.net/qyLb61un/).
 
 <span class="icon-bookshelf"></span> Справка [Default parameters](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Functions/Default_parameters).
 
@@ -203,7 +203,7 @@ alertNames();
 
 ###### Rest parameters
 
-Для доступа ко всем переданным параметрам, в **JavaScript** каждая функция имеет доступ к специальной переменной -- ``arguments`` . 
+В **JavaScript** каждая функция имеет доступ к специальной переменной ``arguments`` для доступа ко всем переданным параметрам. 
 
 <span class="highlight highlight--default">ES v5</span>
 
@@ -222,7 +222,7 @@ function sumArgs(){
 alert('1+2+3='+sumArgs(1,2,3))
 ```
 
-- Попробовать работу кода можно в [JsFiddle](https://jsfiddle.net/z46j3q0o/).
+<span class="icon-code text-m"></span> Попробовать работу кода можно в [JsFiddle](https://jsfiddle.net/z46j3q0o/).
 
 <span class="highlight highlight--success">ES 2015</span>
 
@@ -238,7 +238,7 @@ function sumArgs(...nums){
 alert('1+2+3='+sumArgs(1,2,3))
 ```
 
-- Попробовать работу кода можно в [JsFiddle](https://jsfiddle.net/z34kksh8/).
+<span class="icon-code text-m"></span> Попробовать работу кода можно в [JsFiddle](https://jsfiddle.net/z34kksh8/).
 
 <span class="icon-bookshelf"></span> Справка [Rest parameters](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Functions/Rest_parameters).
 
@@ -263,7 +263,7 @@ var values_1 = values.slice(1); //[2,3]
 alert('v_1 = ' + v_1 + '; values_1 = ' + values_1)
 ```
 
-- Попробовать работу кода можно в [JsFiddle](https://jsfiddle.net/b8yxdddu/1/).
+<span class="icon-code text-m"></span> Попробовать работу кода можно в [JsFiddle](https://jsfiddle.net/b8yxdddu/1/).
 
 <span class="highlight highlight--success">ES 2015</span>
 
@@ -279,7 +279,7 @@ let [v_1, ...values_1] = [1,2,3];
 alert('v_1 = ' + v_1 + '; values_1 = ' + values_1)
 ```
 
-- Попробовать работу кода можно в [JsFiddle](https://jsfiddle.net/tp92csx2/1/).
+<span class="icon-code text-m"></span> Попробовать работу кода можно в [JsFiddle](https://jsfiddle.net/tp92csx2/1/).
 
 <span class="icon-bookshelf"></span> Справка [Destructuring assignment](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment).
 
@@ -301,7 +301,7 @@ alert(arr)
 //[1,2,3,4,5,6]
 ```
 
-- Попробовать работу кода можно в [JsFiddle](https://jsfiddle.net/a2ed27h8/).
+<span class="icon-code text-m"></span> Попробовать работу кода можно в [JsFiddle](https://jsfiddle.net/a2ed27h8/).
 
 <span class="highlight highlight--success">ES 2015</span>
 
@@ -316,7 +316,7 @@ alert(arr)
 //[1,2,3,4,5,6]
 ```
 
-- Попробовать работу кода можно в [JsFiddle](https://jsfiddle.net/tah8sx36/).
+<span class="icon-code text-m"></span> Попробовать работу кода можно в [JsFiddle](https://jsfiddle.net/tah8sx36/).
 
 <span class="icon-bookshelf"></span> Справка [Spread operator](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Operators/Spread_operator).
 
@@ -336,7 +336,7 @@ for (var i = 0; i < values.length; i++) {
 }
 ```
 
-- Попробовать работу кода можно в [JsFiddle](https://jsfiddle.net/Lym1kn67/).
+<span class="icon-code text-m"></span> Попробовать работу кода можно в [JsFiddle](https://jsfiddle.net/Lym1kn67/).
 
 <span class="highlight highlight--success">ES 2015</span>
 
@@ -351,6 +351,6 @@ for (let value of values) {
 }
 ```
 
-- Попробовать работу кода можно в [JsFiddle](https://jsfiddle.net/372d1gt5/).
+<span class="icon-code text-m"></span> Попробовать работу кода можно в [JsFiddle](https://jsfiddle.net/372d1gt5/).
 
 <span class="icon-bookshelf"></span> Справка [for...of](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Statements/for...of).
