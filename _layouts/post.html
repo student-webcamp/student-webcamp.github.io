@@ -12,13 +12,23 @@ layout: default
             </div>
         </div>
     </header>
-    <p class="post-meta row">
-        <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
-            {{ page.date | date: "%b %-d, %Y"}}
-        </time>
-        <!--{% if page.author %} • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span
-            itemprop="name">{{ page.author }}</span></span>{% endif %}-->
-    </p>
+    <div class="post-meta row">
+        <div class="medium-9 columns">
+            <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
+                {{ page.date | date: "%b %-d, %Y"}}
+            </time>
+            <!--{% if page.author %} • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span
+                itemprop="name">{{ page.author }}</span></span>{% endif %}-->
+        </div>
+        <div class="medium-3 columns">
+            <div    style="max-width: 100%; overflow: hidden;"
+                    class="fb-like"
+                    data-share="true"
+                    data-width="450"
+                    data-show-faces="true">
+            </div>
+        </div>
+    </div>
 
     <div class="post-content row" itemprop="articleBody">
         <div class="medium-9 columns post-content__text" id="post_content">
@@ -26,7 +36,8 @@ layout: default
         </div>
         <div class="medium-3 columns" data-sticky-container>
 
-            <nav class="columns sticky" data-sticky data-anchor="post_content" data-btm-anchor="subscribe:bottom" data-sticky-on="medium">
+            <nav class="columns sticky" data-sticky data-anchor="post_content" data-btm-anchor="subscribe:bottom"
+                 data-sticky-on="medium">
                 <ul class="vertical menu data-magellan mb-50" data-magellan>
                     <li>Содержание:</li>
                 </ul>
@@ -62,6 +73,7 @@ layout: default
                     </table>
                 </div>
                 {% endif %}
+
             </nav>
         </div>
     </div>
