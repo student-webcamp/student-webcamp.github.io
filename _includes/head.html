@@ -1,10 +1,15 @@
 <head>
+  {% if page.description %}
+  {% assign _description = page.description %}
+  {% else %}
+  {% assign _description = page.content | strip_html | strip_newlines | truncatewords: 25 %}
+  {% endif %}
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>{% if page.title %}{{ page.title | escape }}{% else %}{{ site.title | escape }}{% endif %}</title>
-  <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+  <meta name="description" content="{{ _description }}">
   <link rel="shortcut icon" href="/img/favicon.ico">
   <link href='https://fonts.googleapis.com/css?family=Lora|Open+Sans:400,300,600&subset=latin,cyrillic' rel='stylesheet'
         type='text/css'>
@@ -15,6 +20,11 @@
   <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
   <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}">
   <!--<link href="//cdn-images.mailchimp.com/embedcode/horizontal-slim-10_7.css" rel="stylesheet" type="text/css">-->
+  <meta property="og:url"                content="{{site.url}}{{ page.url }}" />
+  <meta property="og:type"               content="article" />
+  <meta property="og:title"              content="{{ page.title }}" />
+  <meta property="og:description"        content="{{ _description }}" />
+  <meta property="og:image"              content="{{site.url}}{{ page.fbimg }}" />
   <style type="text/css">
     /*#mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif; width:100%;}*/
     /* Add your own MailChimp form style overrides in your site stylesheet or in this style block.
