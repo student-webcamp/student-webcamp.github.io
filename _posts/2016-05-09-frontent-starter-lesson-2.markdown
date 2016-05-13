@@ -4,6 +4,8 @@ title:  "Frontend Starter 2: Понятие HTML, тега, элемента"
 date:   2016-05-09 19:00:00 +0300
 categories: tutorials
 tags: frontend_starter
+related_courses: frontend_starter frontend_basic
+fbimg: /img/post-images/frontend_starter.jpg
 level: 1
 ---
 
