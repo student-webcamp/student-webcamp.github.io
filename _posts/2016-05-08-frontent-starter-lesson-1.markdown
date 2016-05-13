@@ -4,6 +4,8 @@ title:  "Frontend Starter 1: Знакомство с веб-разработко
 date:   2016-05-08 12:47:19 +0300
 categories: tutorials
 tags: frontend_starter
+related_courses: frontend_starter frontend_basic
+fbimg: /img/post-images/frontend_starter.jpg
 level: 1
 ---
 
