@@ -5,7 +5,7 @@ date:   2016-05-09 19:00:00 +0300
 categories: tutorials
 tags: frontend_starter
 related_courses: frontend_starter frontend_basic
-fbimg: /img/post-images/frontend_starter.jpg
+fbimg: https://lh6.googleusercontent.com/-pSsElPpuuJU/V0SSYRXSXDI/AAAAAAAAAcQ/gVA-XkbODJw_WePoeTuAd-pEu0vZp418gCLIB/w1118-h587-no/
 level: 1
 ---
 
