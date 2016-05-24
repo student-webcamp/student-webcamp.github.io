@@ -356,3 +356,6 @@ for (let value of values) {
 <span class="icon-code text-m"></span> Попробовать работу кода можно в [JsFiddle](https://jsfiddle.net/372d1gt5/).
 
 <span class="icon-bookshelf"></span> Справка [for...of](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Statements/for...of).
+
+---
+[Новая жизнь с новым JavaScript: ES2015 Часть II](/es2015-part2).

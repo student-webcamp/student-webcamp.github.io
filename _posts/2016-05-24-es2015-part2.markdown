@@ -1,0 +1,150 @@
+---
+layout: post
+title:  "JavaScript: ES2015 | Часть II"
+date:   2016-05-24 12:47:19 +0300
+categories: tutorials
+tags: javascript
+permalink: es2015-part2
+related_courses: js_advanced js_angular
+level: 4
+fbimg: /img/post-images/es2015.jpg
+description: JavaScript ES2015 - ближайшее будущее JavaScript, в которое уверенно смотpит студент WebCamp
+---
+
+# Новая жизнь с новым JavaScript: ES2015.
+
+#### Часть II
+
+### <span class="icon-homecode" id="object-enhancements" data-magellan-target="object-enhancements"></span> Дополнительные возможности объектных литералов
+
+Что в JavaScript можно назвать крутым - так это объектные литералы: удобный и быстрый способ организовать и передать данные.  В **ES2015** решили прокачать объектные литералы еще больше, так, чтобы код казался менее понятным непосвященным в JavaScript пришельцам из других языков. В этой части короткого обзора **ES2015** рассмотрим новое в JavaScript объектах.
+
+#### Короткая запись свойств
+
+
+<span class="highlight highlight--default">ES v5</span>
+
+Вот вам пример простого объекта, значения которого передаются через переменные:
+
+```javascript
+/*  -- ES5 -- */
+var name = "Vasia";
+var lastName = "Pupkin";
+
+var vasia = {
+  name: name,
+  lastName: lastName
+};
+
+alert(vasia.name+" "+vasia.lastName)
+//Vasia Pupkin
+```
+
+<span class="icon-code text-m"></span> Попробовать работу кода можно в [JsFiddle](https://jsfiddle.net/1vm7fc1x/).
+
+<span class="highlight highlight--success">ES 2015</span>
+
+А вот как можно запутать следы обычного объектного литерала в **ES2015**:
+
+```javascript
+/*  -- ES 2015 -- */
+let name = "Vasia";
+let lastName = "Pupkin";
+
+let vasia = {
+  name,
+  lastName
+};
+
+alert(vasia.name+" "+vasia.lastName)
+//Vasia Pupkin
+```
+
+<span class="icon-code text-m"></span> Попробовать работу кода можно в [JsFiddle](https://jsfiddle.net/1vm7fc1x/2).
+
+#### Квадратные скобки
+
+А помните в чем разница между обращением к свойству объекта через ``.`` и ``[]``? 
+В ``[]`` можно использовать переменную, однако в ES5 - только после инициализации объекта.
+
+<span class="highlight highlight--default">ES v5</span>
+
+```javascript
+/*  -- ES5 -- */
+var prop = "name";
+var petia = {};
+petia[prop] = "Petia";
+alert(petia.name)
+//Petia
+```
+<span class="icon-code text-m"></span> Попробовать работу кода можно в [JsFiddle](https://jsfiddle.net/9xbd6frb/).
+
+<span class="highlight highlight--success">ES 2015</span>
+
+А в **ES2015** можно использовать ``[]`` прямо при инициализации:
+
+```javascript
+/*  -- ES 2015 -- */
+let prop = "name";
+let petia = {
+  [prop]: "Petia"
+};
+
+alert(petia.name)
+  //Petia
+```
+<span class="icon-code text-m"></span> Попробовать работу кода можно в [JsFiddle](https://jsfiddle.net/9xbd6frb/1/).
+
+#### Короткая запись методов
+
+А еще, в объектных литералах **ES2015** методы больше похожи на методы.
+
+<span class="highlight highlight--default">ES v5</span>
+
+В ES5 метод был похож на обычную функцию (ею и является):
+
+```javascript
+/*  -- ES5 -- */
+var name = "Vasia";
+var lastName = "Pupkin";
+
+var vasia = {
+  name: name,
+  lastName: lastName,
+  sayName: function(){
+		alert(vasia.name+" "+vasia.lastName)
+  }
+};
+
+vasia.sayName();
+//Vasia Pupkin
+```
+<span class="icon-code text-m"></span> Попробовать работу кода можно в [JsFiddle](https://jsfiddle.net/1vm7fc1x/3/).
+
+<span class="highlight highlight--success">ES 2015</span>
+
+А в **ES2015** это уже выглядит как настоящий метод (хотя по прежнему - просто функция):
+
+```javascript
+/*  -- ES 2015 -- */
+let name = "Vasia";
+let lastName = "Pupkin";
+
+let vasia = {
+  name,
+  lastName,
+  sayName(){
+    alert(vasia.name+" "+vasia.lastName)
+  }
+};
+
+vasia.sayName();
+//Vasia Pupkin
+```
+<span class="icon-code text-m"></span> Попробовать работу кода можно в [JsFiddle](https://jsfiddle.net/1vm7fc1x/4/).
+
+
+<span class="icon-bookshelf"></span> Справка [Object initializer](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Operators/Object_initializer).
+
+---
+[Новая жизнь с новым JavaScript: ES2015 Часть I](/es2015).
