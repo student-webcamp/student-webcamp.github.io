@@ -7,7 +7,7 @@ tags: javascript
 permalink: es2015-part2
 related_courses: js_advanced js_angular
 level: 4
-fbimg: /img/post-images/es2015.jpg
+fbimg: https://lh6.googleusercontent.com/-ijUiAHZ_7a4/V0SSs_Sj3CI/AAAAAAAAAcw/6nfVJGheIWQdYayisHr2utv5dDoMiqkbgCLIB/w1118-h587-no/
 description: JavaScript ES2015 - ближайшее будущее JavaScript, в которое уверенно смотpит студент WebCamp
 ---
 
