@@ -59,6 +59,3 @@ Student WebCamp - это новый ресурс от [WebCamp](http://www.webca
         </li>
     </ul>
 </div>
-
-
-
