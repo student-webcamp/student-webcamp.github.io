@@ -148,3 +148,4 @@ vasia.sayName();
 
 ---
 [Новая жизнь с новым JavaScript: ES2015 Часть I](/es2015).
+[Новая жизнь с новым JavaScript: ES2015 Часть III](/es2015-part3).
