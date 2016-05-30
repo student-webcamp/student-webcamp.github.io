@@ -61,7 +61,7 @@ layout: default
     <div class="row">
         <div class="">
             <a href="{{ page.url }}{{tag}}/" class="btn-more position-left">Больше <span
-                    class="text-capitalize">{{tag}}</span></a>
+                    class="text-capitalize">{{tag | replace: "_", " "}}</span></a>
         </div>
     </div>
     <hr/>

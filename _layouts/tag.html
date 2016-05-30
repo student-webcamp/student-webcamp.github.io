@@ -9,7 +9,7 @@ layout: default
         <div class="page__header course">
             <div class="row">
                 <div class="medium-3 columns end">
-                    <h1 class="page__title text-uppercase">{{ page.title }}</h1>
+                    <h1 class="page__title text-uppercase">{{ page.title | replace: "_", " "}}</h1>
                 </div>
             </div>
         </div>
@@ -19,7 +19,7 @@ layout: default
             <li><a href="/">Главная</a></li>
             <li><a href="/tutorials">Уроки</a></li>
             <li>
-                <span class="show-for-sr">Current: </span> {{ page.title }}
+                <span class="show-for-sr">Current: </span> {{ page.title | replace: "_", " "}}
             </li>
         </ul>
     </nav>
