@@ -25,7 +25,7 @@ layout: default
 
     <div class="row">
         <p class="text--success">
-            <a href="{{ page.url }}{{tag}}/" class="text--success underline text-capitalize">{{tag}}</a>
+            <a href="{{ page.url }}{{tag}}/" class="text--success underline text-capitalize">{{tag | replace: "_", " "}}</a>
         </p>
     </div>
 
