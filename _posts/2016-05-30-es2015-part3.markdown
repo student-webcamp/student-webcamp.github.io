@@ -1,0 +1,122 @@
+---
+layout: post
+title:  "JavaScript: ES2015 | Часть III"
+date:   2016-05-30 14:11:19 +0300
+categories: tutorials
+tags: javascript
+permalink: es2015-part3
+related_courses: js_advanced js_angular
+level: 4
+fbimg: https://lh6.googleusercontent.com/-ijUiAHZ_7a4/V0SSs_Sj3CI/AAAAAAAAAcw/6nfVJGheIWQdYayisHr2utv5dDoMiqkbgCLIB/w1118-h587-no/
+description: JavaScript ES2015 - ближайшее будущее JavaScript, в которое уверенно смотpит студент WebCamp
+---
+
+# Новая жизнь с новым JavaScript: ES2015.
+
+#### Часть III
+
+### <span class="icon-homecode" id="const-let" data-magellan-target="const-let"></span> ``const``, ``let`` или ``var``? Вот в чем вопрос.
+
+Свободный от типизации и весь в глобальной области видимости, JavaScript предлагал нам только ключевое слово ``var`` для инициализации переменных и множество 'workaround'-ов для инкапсуляции.
+
+В **ES2015** приняли два новых ключевых слова: ``const`` и ``let``, оба с областью видимости внутри блока, мы уже говорили, об этих нововведениях в первой части нашего короткого обзора ([Новая жизнь с новым JavaScript: ES2015 Часть I](/es2015)), но решили немного подробнее остановиться на особенностях использования ``const``, ``let`` и ``var``.
+
+<span class="highlight highlight--default">ES v5</span>
+
+Еще раз о том, что приходилось делать в ES5, чтобы создать приватность переменной:
+
+```javascript
+/*  -- ES5 -- */
+(function () {  
+    var secret = "secret";
+    
+}()); 
+
+alert(secret); // ReferenceError
+```
+<span class="icon-code text-m"></span> Попробовать работу кода можно в [JsFiddle](https://jsfiddle.net/xga2ponc/).
+
+<span class="highlight highlight--success">ES 2015</span>
+
+И как это работает в **ES2015**:
+
+```javascript
+/*  -- ES 2015 -- */
+{  
+    let secret = "secret";
+} 
+
+alert(secret); // ReferenceError
+
+```
+
+<span class="icon-code text-m"></span> Попробовать работу кода можно в [JsFiddle](https://jsfiddle.net/xga2ponc/1/).
+
+#### Но есть еще и ``const``
+
+<div class="row mb-50">
+<div class="medium-6 large-4 columns">
+<img src="/img/post-images/js/const_let.svg" alt="const vs let">
+</div>
+<div class="medium-6 large-8 columns">
+<p><code class="highlighter-rouge">const</code> - по сути, тот же <code class="highlighter-rouge">let</code>, только его значение (или указатель) должно быть назначено одновременно с декларацией и не изменяется кодом, короче говоря: константа.
+Поскольку такого в JavaScript еще не было, продвинутые JavaScript-щики, использовали <code class="highlighter-rouge">Object.defineProperty</code>, (см. <a href="/es2015">Новая жизнь с новым JavaScript: ES2015 Часть I</a>).</p>
+<p>Вот несколько примеров, где <code class="highlighter-rouge">const</code> однозначно лучше <code class="highlighter-rouge">let</code>:</p>
+</div>
+
+</div>
+
+<span class="highlight highlight--success">ES 2015</span>
+
+Использовать ``const``, чтобы обезопасить программу от не инициализированной переменной:
+
+```javascript
+/*  -- ES 2015 -- */
+{  
+    const login = 'name'; //OK
+    const pass; //SyntaxError
+} 
+
+```
+
+<span class="icon-code text-m"></span> Попробовать работу кода можно в [JsFiddle](https://jsfiddle.net/xga2ponc/4/).
+
+Использовать ``const``, чтобы принудительно сохранить ссылку на объект:
+
+```javascript
+/*  -- ES 2015 -- */
+{  
+    const obj = {};
+    obj.prop = 123; //OK
+    
+    obj = {prop:456}; //Error
+} 
+
+```
+
+Использовать ``const``, в цикле ``for...of``:
+
+```javascript
+/*  -- ES 2015 -- */
+for (const x of ['a', 'b']) {
+    console.log(x);
+}
+
+```
+
+
+<span class="icon-code text-m"></span> Попробовать работу кода можно в [JsFiddle](https://jsfiddle.net/xga2ponc/3/).
+
+#### А как же ``var``?
+
+``var``? Что такое ``var``?
+
+Про ``var`` можно потихоньку забывать, как о страшном сне JavaScript-а, потому что с **ES2015** нет никакой причины использовать ``var``.
+
+---
+
+Больше о **ES2015** будет в части IV, а если вы пропустили первые две, вот ссылки:
+
+[Новая жизнь с новым JavaScript: ES2015 Часть I](/es2015).
+
+[Новая жизнь с новым JavaScript: ES2015 Часть II](/es2015-part2).
