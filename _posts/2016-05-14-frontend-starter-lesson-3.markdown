@@ -167,7 +167,7 @@ fallback_encoding": "Cyrillic (Windows 1251)"
 ##### Полезные ссылки
 
 - Документация Sublime Text [на русском](http://sublimetext.ru/documentation) или [официальная](https://www.sublimetext.com/)
-- Большая подбока [плагинов с описанием и аналогами на русском](https://habrahabr.ru/post/235901/)
+- Большая подборка [плагинов с описанием и аналогами на русском](https://habrahabr.ru/post/235901/)
 - Наглядное пособие по [комбинациям горячих клавиш в Sublime](http://webdesign.tutsplus.com/tutorials/useful-shortcuts-for-a-faster-workflow-in-sublime-text-3--cms-22185)
 - Больше полезных статей на [Student Webcamp](/)
 
