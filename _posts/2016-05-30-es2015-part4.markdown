@@ -1,0 +1,134 @@
+---
+layout: post
+title:  "JavaScript: ES2015 | Часть IV"
+date:   2016-06-02 14:40:00 +0300
+categories: tutorials
+tags: javascript
+permalink: es2015-part4
+related_courses: js_advanced js_angular
+level: 4
+description: JavaScript ES2015 - ближайшее будущее JavaScript, в которое уверенно смотpит студент WebCamp. Оператор spread/rest
+fbimg: https://lh6.googleusercontent.com/-ijUiAHZ_7a4/V0SSs_Sj3CI/AAAAAAAAAcw/6nfVJGheIWQdYayisHr2utv5dDoMiqkbgCLIB/w1118-h587-no/
+---
+
+# Новая жизнь с новым JavaScript: ES2015.
+
+#### Часть IV
+
+### <span class="icon-homecode" id="spread" data-magellan-target="spread"></span> Расширяем границы со ``spread``
+
+В **ES2015** при желании, мы можем разобрать массив (и не только) на составляющие его элементы, с помощью нового оператора ``spread``. Круто? Круто! Но зачем? 
+
+Мы уже коротко говорили о ``spread`` операторе в первой части нашей серии ([Новая жизнь с новым JavaScript: ES2015 Часть I](/es2015)), а теперь вот вам несколько причин полюбить эти три точки ``...``
+
+##### Ловкий делец распространитель (Smooth operator spread operator)
+
+
+<span class="highlight highlight--default">ES v5</span>
+
+Итак, напомним, что разобрав массив на составляющие его элементы мы можем заменить ``apply``
+
+```javascript
+/*  -- ES5 -- */
+function foo(x, y, z) {
+  log(x, y, z);
+}
+foo.apply(null, [1, 2, 3]); //1,2,3
+```
+<span class="icon-code text-m"></span> Попробовать работу кода можно в [JsFiddle](https://jsfiddle.net/kmbczejh/).
+
+<span class="highlight highlight--success">ES 2015</span>
+
+И как это работает в **ES2015**:
+
+```javascript
+/*  -- ES 2015 -- */
+function foo(x, y, z) {
+  log(x, y, z);
+}
+foo(...[1, 2, 3]); //1,2,3
+```
+
+<span class="icon-code text-m"></span> Попробовать работу кода можно в [JsFiddle](https://jsfiddle.net/kmbczejh/1/).
+
+<span class="highlight highlight--default">ES v5</span>
+
+Заменить ``concat``
+
+```javascript
+/*  -- ES5 -- */
+var start = [1,2];
+var end = [6,7,8];
+var full = start.concat([3,4,5], end);
+console.log(full); //[1,2,3,4,5,6,7,8]
+```
+<span class="icon-code text-m"></span> Попробовать работу кода можно в [JsFiddle](https://jsfiddle.net/kmbczejh/2/).
+
+<span class="highlight highlight--success">ES 2015</span>
+
+И как это работает в **ES2015**:
+
+```javascript
+/*  -- ES 2015 -- */
+var start = [1,2];
+var end = [6,7,8];
+var full = [...start, 3,4,5, ...end];
+console.log(full); //[1,2,3,4,5,6,7,8]
+```
+
+<span class="icon-code text-m"></span> Попробовать работу кода можно в [JsFiddle](https://jsfiddle.net/kmbczejh/3/).
+
+##### Собиратель параметров функции (rest parameters)
+
+<span class="highlight highlight--default">ES v5</span>
+
+Заменить эти безобразные действия с ``[].slice.call(arguments)``, нужно было еще в 1995 году
+
+```javascript
+/*  -- ES5 -- */
+function log() {
+  var out = document.getElementById("output");
+  out.innerHTML = ">> " + [].slice.call(arguments).join("");
+}
+
+log("a","b","c"); //abc
+```
+<span class="icon-code text-m"></span> Попробовать работу кода можно в [JsFiddle](https://jsfiddle.net/kmbczejh/4/).
+
+<span class="highlight highlight--success">ES 2015</span>
+
+И мы дождались этого в **ES2015**, ``...args`` (название args - произвольное) в параметре функции - это настоящий массив со всеми остальными аргументами: 
+
+```javascript
+/*  -- ES 2015 -- */
+function log(...args) {
+  let out = document.getElementById("output");
+  out.innerHTML = ">> " + args.join("");
+}
+
+log("a","b","c"); //abc
+```
+
+<span class="icon-code text-m"></span> Попробовать работу кода можно в [JsFiddle](https://jsfiddle.net/kmbczejh/5/).
+
+<span class="icon-sir"></span> Заметьте, мы написали "со всеми **остальными** аргументами", а не "со всеми аргументами". Потому что это могут действительно **остальные** (rest) пареметры:
+
+```javascript
+/*  -- ES 2015 -- */
+function log(prefix, ...rest) {// параметр prefix и остальные 
+  let out = document.getElementById("output");
+  out.innerHTML = prefix + rest.join("");
+}
+
+log(">> ","a","b","c"); //abc
+```
+
+---
+
+Больше о **ES2015** будет в части V, а если вы пропустили первые три, вот ссылки:
+
+[Новая жизнь с новым JavaScript: ES2015 Часть I](/es2015).
+
+[Новая жизнь с новым JavaScript: ES2015 Часть II](/es2015-part2).
+
+[Новая жизнь с новым JavaScript: ES2015 Часть III](/es2015-part3).

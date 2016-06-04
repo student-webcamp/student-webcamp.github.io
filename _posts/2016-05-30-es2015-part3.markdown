@@ -94,6 +94,10 @@ alert(secret); // ReferenceError
 
 ```
 
+<span class="icon-sir"></span>
+Этот код сохранит ссылку настолько, что объект **не будет собран Garbage collector-ом**.
+
+
 Использовать ``const``, в цикле ``for...of``:
 
 ```javascript
