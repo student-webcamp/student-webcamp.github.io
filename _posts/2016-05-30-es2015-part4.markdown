@@ -21,6 +21,8 @@ fbimg: https://lh6.googleusercontent.com/-ijUiAHZ_7a4/V0SSs_Sj3CI/AAAAAAAAAcw/6n
 
 Мы уже коротко говорили о ``spread`` операторе в первой части нашей серии ([Новая жизнь с новым JavaScript: ES2015 Часть I](/es2015)), а теперь вот вам несколько причин полюбить эти три точки ``...``
 
+![Alt text](/img/post-images/js/spread.svg)
+
 ##### Ловкий делец распространитель (Smooth operator spread operator)
 
 
