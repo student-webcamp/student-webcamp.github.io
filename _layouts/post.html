@@ -87,7 +87,8 @@ layout: default
                 <p class="text-right">
                     <span class="highlight--white text-l">Подпишитесь на обновления Student WebCamp</span>
                 </p>
-                <p class="text-right text-white">чтобы первым узнавать об обновлениях {{page.title}}</p>
+                <p class="text-right text-white">чтобы первым узнавать об обновлениях по теме <strong>"{{page.title}}"</strong> и в сфере
+                    <strong>{{page.tags | join: " и "}}</strong></p>
                 <form action="//webcamp.us13.list-manage.com/subscribe/post?u=d9e9c415942a772cb0d43a4d8&amp;id=57b2022d15"
                       method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate"
                       target="_blank" novalidate>
@@ -111,7 +112,8 @@ layout: default
 
 <div class="row mb-50">
     <div class="medium-12 columns">
-        Вы можете узнать больше o <strong>{{page.title}}</strong> на курсах <a
+        Вы можете узнать больше по теме <strong>"{{page.title}}"</strong> и в сфере <strong>{{page.tags | join: " и
+        "}}</strong> на курсах <a
             href="http://www.webcamp.com.ua/">WebCamp</a>
         <div class="page__info">
             <p class="clearfix">
