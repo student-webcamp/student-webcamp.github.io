@@ -1,0 +1,51 @@
+---
+layout: post
+title:  "Что значит JavaScript в 2016"
+date:   2016-10-04 19:00:00 +0300
+categories: tutorials
+tags: javascript
+related_courses: js_advanced
+permalink: web-2016
+level: 1
+---
+
+# Что значит JavaScript в 2016
+
+#### Какого это, заниматься веб разработкой в 2016 году? 
+
+Замечательная [статья](https://hackernoon.com/how-it-feels-to-learn-javascript-in-2016-d3a717dd577f#.5fadyw8j3) Jose Aguinaga о том, как выглядит JavaScript разработчик в 2016 настолько хороша, что мы решили перевести ее и оформить в виде комикса.
+
+![stage1](img/post-images/web-2016/01.svg)
+![stage2](img/post-images/web-2016/02.svg)
+![stage3](img/post-images/web-2016/03.svg)
+![stage4](img/post-images/web-2016/04.svg)
+![stage5](img/post-images/web-2016/05.svg)
+![stage6](img/post-images/web-2016/06.svg)
+![stage7](img/post-images/web-2016/07.svg)
+![stage8](img/post-images/web-2016/08.svg)
+![stage9](img/post-images/web-2016/09.svg)
+![stage10](img/post-images/web-2016/10.svg)
+![stage11](img/post-images/web-2016/11.svg)
+![stage12](img/post-images/web-2016/12.svg)
+![stage13](img/post-images/web-2016/13.svg)
+![stage14](img/post-images/web-2016/14.svg)
+![stage15](img/post-images/web-2016/15.svg)
+![stage16](img/post-images/web-2016/16.svg)
+![stage17](img/post-images/web-2016/17.svg)
+![stage18](img/post-images/web-2016/18.svg)
+![stage19](img/post-images/web-2016/19.svg)
+![stage20](img/post-images/web-2016/20.svg)
+![stage21](img/post-images/web-2016/21.svg)
+![stage22](img/post-images/web-2016/22.svg)
+![stage23](img/post-images/web-2016/23.svg)
+![stage24](img/post-images/web-2016/24.svg)
+![stage25](img/post-images/web-2016/25.svg)
+![stage26](img/post-images/web-2016/26.svg)
+![stage27](img/post-images/web-2016/27.svg)
+![stage28](img/post-images/web-2016/28.svg)
+![stage29](img/post-images/web-2016/29.svg)
+
+
+
+
+<script>console.log('kuku')</script>
