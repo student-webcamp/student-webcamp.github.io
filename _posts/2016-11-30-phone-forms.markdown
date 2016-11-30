@@ -4,7 +4,7 @@ title:  "The BEST number inputs"
 date:   2016-11-30 14:35 +0300
 categories: webcamp
 tags: frontend_starter
-related_courses: frontend_starter frontend_basic
+related_courses: frontend_starter frontend_basic javascript_basic javascript_dom
 ---
 
 # Лучшие формы для ввода номера (если Вы ненавидите своих клиентов)
@@ -76,7 +76,7 @@ related_courses: frontend_starter frontend_basic
 
 ### <span class="icon-homecode" id="eight" data-magellan-target="eight"> Игра Больше-Меньше
 
-По мотивам игры "Угадай число", которую мы иногда реализуем на курсе [JavaScript](https://www.webcamp.com.ua/courses/js_basic)
+По мотивам игры "Угадай число", которую мы иногда реализуем на курсе [JavaScript Basic](https://www.webcamp.com.ua/courses/js_basic)
 
 ![Phone input form with input click 3](/img/forms/08.gif)
 
@@ -101,7 +101,7 @@ related_courses: frontend_starter frontend_basic
 ![Phone input form with input pi](/img/forms/12.gif)
 
 
-На этом подборка отличных решений дл явзаимодействия с пользователем закончена.
+На этом подборка отличных решений для взаимодействия с пользователем закончена.
 
 Как сделать удобный интерфейс мы рассказываем на таких курсах:
 
