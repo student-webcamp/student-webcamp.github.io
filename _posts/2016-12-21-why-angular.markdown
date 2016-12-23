@@ -4,7 +4,8 @@ title:  "Почему Angular?"
 date:   2016-12-21 10:00 +0300
 categories: tutorials
 tags: javascript
-related_courses: angular
+related_courses: angular js_advanced
+
 ---
 Автор: [Жукова Елена](https://ua.linkedin.com/in/helenzhukova)
 # 5 причин, почему Angular поменял правила игры веб разработки и сделал зарплату фронтенд разработчика втрое выше.
